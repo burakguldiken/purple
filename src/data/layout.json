@@ -1,0 +1,18 @@
+{
+  "settings": {
+    "layout_type": "ltr",
+    "sidebar": {
+      "type": "default",
+      "body_type": "default"
+    },
+    "sidebar_setting": "border-sidebar",
+    "sidebar_background": "dark-sidebar"
+  },
+  "color": {
+    "layout_version": "light",
+    "primary_color": null,
+    "secondary_color": "#f73164",
+    "mix_layout": "default",
+    "color": null
+  }
+}
