@@ -1,3 +1,6 @@
+using Business.Extensions;
+using Core.Extensions;
+using DataAccess.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +32,10 @@ namespace Purple
             services.SwaggerConfiguration();
             services.HeaderConfiguration();
             services.JwtConfigure();
-            services.ConfigureDependencies();
+
+            services.AddCoreDependencies();
+            services.AddDataAccessDependencies();
+            services.AddBusinessDependencies();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

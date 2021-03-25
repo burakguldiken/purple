@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Purple.Extensions
 {
-    public static class BuilderExtensions
+    public static class BuilderExtension
     {
         public static void Configure(this IApplicationBuilder app)
         {
@@ -22,7 +22,6 @@ namespace Purple.Extensions
             {
                 c.SwaggerEndpoint("/swagger/Purple/swagger.json", "Purple");
             });
-
 
             app.UseMvc();
         }

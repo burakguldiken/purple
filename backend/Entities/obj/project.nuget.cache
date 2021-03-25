@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "G0s5MBNN135dRmQjpa4ZlEvs7iBAKInFPnMaA9fYMq5q/W4Tv9C9PJZ+U/anbD7Q82B9IdHHEwjuDDDKJm4Wqw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\burak\\Desktop\\Burak Template\\SourceTrreStarterKit\\backend\\Entities\\Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\burak\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
+    "C:\\Users\\burak\\.nuget\\packages\\dapper.contrib\\2.0.35\\dapper.contrib.2.0.35.nupkg.sha512",
+    "C:\\Users\\burak\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\burak\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\burak\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

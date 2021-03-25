@@ -1,0 +1,12 @@
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\obj\Debug\netcoreapp3.1\Core.csproj.CopyComplete
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\obj\Debug\netcoreapp3.1\Core.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Core\obj\Debug\netcoreapp3.1\Core.pdb

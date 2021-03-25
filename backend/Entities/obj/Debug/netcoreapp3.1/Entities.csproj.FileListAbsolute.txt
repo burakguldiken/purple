@@ -1,0 +1,9 @@
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
