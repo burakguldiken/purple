@@ -3,18 +3,16 @@ using DataAccess.IRepositories;
 using Entities.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
 namespace DataAccess.Repositories
 {
-    public class UserRepository : BaseRepository<User>, IUserRepository
+    public class UserRepository : BaseRepository<User>,IUserRepository
     {
-        IBaseRepository<User> _dbContext;
-
-        public UserRepository(IBaseRepository<User> dbContext)
+        public UserRepository(IDbTransaction dbTransaction) : base(dbTransaction)
         {
-            _dbContext = dbContext;
         }
     }
 }

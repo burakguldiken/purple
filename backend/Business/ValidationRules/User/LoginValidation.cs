@@ -11,7 +11,7 @@ namespace Business.ValidationRules.User
         public LoginValidation()
         {
             RuleFor(x => x.Email).EmailAddress().MaximumLength(100);
-            RuleFor(x => x.Password).NotNull().NotEmpty();
+            RuleFor(x => x.Password).NotNull();
         }
     }
 }

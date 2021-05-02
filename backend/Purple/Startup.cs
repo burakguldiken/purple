@@ -1,3 +1,4 @@
+using AspNetCoreRateLimit;
 using Business.Extensions;
 using Core.Extensions;
 using DataAccess.Extensions;
@@ -19,12 +20,12 @@ namespace Purple
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -36,6 +37,8 @@ namespace Purple
             services.AddCoreDependencies();
             services.AddDataAccessDependencies();
             services.AddBusinessDependencies();
+
+            services.AddRateLimiting();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,6 +47,10 @@ namespace Purple
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseIpRateLimiting();
+
+            app.UseExceptionMiddleware();
 
             app.Configure();
         }
