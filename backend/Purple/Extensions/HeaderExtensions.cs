@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Purple.Extensions
 {
-    public static class HeaderExtension
+    public static class HeaderExtensions
     {
         public static void HeaderConfiguration(this IServiceCollection services)
         {

@@ -10,7 +10,7 @@
       {
         "Endpoint": "*",
         "Period": "1m",
-        "Limit": 3
+        "Limit": 100
       }
     ]
   }

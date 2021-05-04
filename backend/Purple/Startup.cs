@@ -38,6 +38,8 @@ namespace Purple
             services.AddDataAccessDependencies();
             services.AddBusinessDependencies();
 
+            services.AddAutoMapper();
+
             services.AddRateLimiting();
         }
 

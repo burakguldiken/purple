@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Purple.Extensions
 {
-    public static class JwtExtension
+    public static class JwtExtensions
     {
         public static void JwtConfigure(this IServiceCollection services)
         {

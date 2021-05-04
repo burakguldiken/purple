@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Purple.Extensions
 {
-    public static class SwaggerExtension
+    public static class SwaggerExtensions
     {
         public static void SwaggerConfiguration(this IServiceCollection services)
         {

@@ -9,3 +9,4 @@ C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\
 C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\net5.0\Entities.dll
 C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\net5.0\ref\Entities.dll
 C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\net5.0\Entities.pdb
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\obj\Debug\net5.0\Entities.csprojAssemblyReference.cache

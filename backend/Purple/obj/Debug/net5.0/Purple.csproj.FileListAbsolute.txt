@@ -65,3 +65,5 @@ C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Purple\obj\De
 C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Purple\obj\Debug\net5.0\Purple.genruntimeconfig.cache
 C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Purple\bin\Debug\net5.0\AspNetCoreRateLimit.dll
 C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Purple\obj\Debug\net5.0\Purple.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Purple\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Purple\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

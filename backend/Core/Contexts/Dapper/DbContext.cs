@@ -1,7 +1,7 @@
 ﻿using Business.Enums;
 using Dapper;
 using Dapper.Contrib.Extensions;
-using Entities.Entity;
+using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;

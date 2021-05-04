@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Purple.Extensions
 {
-    public static class CorsExtension
+    public static class CorsExtensions
     {
         public static void ConfigureCors(this IServiceCollection services)
         {

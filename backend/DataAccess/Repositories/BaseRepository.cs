@@ -1,6 +1,6 @@
 ﻿using Core.Context.Dapper;
 using DataAccess.IRepositories;
-using Entities.Entity;
+using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;

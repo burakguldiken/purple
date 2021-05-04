@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Purple.Extensions
 {
-    public static class BuilderExtension
+    public static class BuilderExtensions
     {
         public static void Configure(this IApplicationBuilder app)
         {
