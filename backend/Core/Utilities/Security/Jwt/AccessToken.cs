@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.CustomEntity.Response
+namespace Core.Utilities.Security.Jwt
 {
-    public class UserLoginResponse
+    public class AccessToken
     {
-        public int Id { get; set; }
         public string Token { get; set; }
+        public DateTime Expiration { get; set; }
     }
 }

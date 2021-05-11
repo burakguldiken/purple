@@ -14,5 +14,11 @@ namespace DataAccess.Repositories
         public UserRepository(IDbTransaction dbTransaction) : base(dbTransaction)
         {
         }
+
+        public User GetUserByEmail(string email)
+        {
+            string sql = @"SELECT * FROM User WHERE Email = @email AND StatusId = 2";
+            return _connection.ExecuteCommand<User>(sql, email).FirstOrDefault();
+        }
     }
 }

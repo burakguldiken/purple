@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Business/1.0.0": {
         "dependencies": {
+          "AutoMapper": "10.1.1",
           "DataAccess": "1.0.0",
           "Entities": "1.0.0",
           "FluentValidation": "10.1.0",
@@ -389,7 +390,6 @@
       },
       "Entities/1.0.0": {
         "dependencies": {
-          "AutoMapper": "10.1.1",
           "Dapper.Contrib": "2.0.78"
         },
         "runtime": {

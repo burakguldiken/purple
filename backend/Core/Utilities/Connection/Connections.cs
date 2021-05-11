@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Core.Utilities.Environment;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,7 +24,7 @@ namespace Core.Utilities.Connection
 
         public Connections()
         {
-            EnvironmentManager.EnvironmentManager environmentManager = EnvironmentManager.EnvironmentManager.Instance;
+            EnvironmentManager environmentManager = EnvironmentManager.Instance;
             IConfiguration configuration = environmentManager.Get_Configuration();
 
             connString = (string)configuration.GetValue(typeof(string), "ConnString");

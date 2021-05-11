@@ -45,6 +45,8 @@ namespace Core.Utilities.Middleware
 
             if(ex.GetType() == typeof(ValidationException))
             {
+                httpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+
                 return httpContext.Response.WriteAsync(JsonConvert.SerializeObject(new ValidationErrorDetail()
                 {
                     Errors = ((ValidationException)ex).Errors.Select(x => x.ErrorMessage).ToList(),

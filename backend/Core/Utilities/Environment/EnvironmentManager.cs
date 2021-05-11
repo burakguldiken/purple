@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Utilities.EnvironmentManager
+namespace Core.Utilities.Environment
 {
     public class EnvironmentManager
     {
@@ -37,7 +37,7 @@ namespace Core.Utilities.EnvironmentManager
             {
                 try
                 {
-                    environmentName = Environment.GetEnvironmentVariable("PURPLE_ENVIRONMENT").ToLower();
+                    environmentName = System.Environment.GetEnvironmentVariable("PURPLE_ENVIRONMENT").ToLower();
                 }
                 catch (Exception ex)
                 {

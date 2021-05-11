@@ -11,7 +11,7 @@ namespace Business.Extensions
     {
         public static void AddBusinessDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthService, AuthService>();
         }
     }
 }

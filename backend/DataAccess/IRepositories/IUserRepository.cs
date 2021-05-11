@@ -8,5 +8,11 @@ namespace DataAccess.IRepositories
 {
     public interface IUserRepository : IBaseRepository<User>
     {
+        /// <summary>
+        /// Get user by email address
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        User GetUserByEmail(string email);
     }
 }

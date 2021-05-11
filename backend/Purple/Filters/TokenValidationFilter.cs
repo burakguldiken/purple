@@ -32,7 +32,7 @@ namespace Purple.Filters
 
             try
             {
-                var userId = Convert.ToInt32(context.HttpContext.User.Identity.Name);
+                var userId = Convert.ToInt32(context.HttpContext.User.Claims.FirstOrDefault().Value);
                 context.HttpContext.Request.Headers.TryGetValue("Authorization", out bearer);
                 if (userId <= 0 || bearer.ToString().Split(' ')[1] == null)
                 {
@@ -61,7 +61,7 @@ namespace Purple.Filters
         public async void UnAuthorized(ActionExecutingContext context)
         {
             ErrorResult errorResult = new ErrorResult();
-            errorResult.Message = ErrorResponseMessage.Unauthorized;
+            errorResult.Message = ErrorMessages.Unauthorized;
             context.Result = new UnauthorizedObjectResult(errorResult);
             await context.Result.ExecuteResultAsync(context);
         }

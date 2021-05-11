@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Core.Extensions
 {
-    public static class MiddlewareExtensions
+    public static class ExceptionMiddlewareExtensions
     {
         public static IApplicationBuilder UseExceptionMiddleware(this IApplicationBuilder builder)
         {

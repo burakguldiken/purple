@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Business.ValidationRules.User
 {
-    public class LoginValidation : AbstractValidator<UserLoginRequest>
+    public class LoginValidation : AbstractValidator<UserLoginRequestDto>
     {
         public LoginValidation()
         {

@@ -1,5 +1,5 @@
 ﻿using AspNetCoreRateLimit;
-using Core.Utilities.EnvironmentManager;
+using Core.Utilities.Environment;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;

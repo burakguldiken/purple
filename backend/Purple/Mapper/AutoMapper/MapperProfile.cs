@@ -12,7 +12,7 @@ namespace Purple.Utilities.Mapper.AutoMapper
     {
         public MapperProfile()
         {
-            CreateMap<User, UserLoginRequest>();
+            CreateMap<User, UserLoginRequestDto>();
         }
     }
 }
