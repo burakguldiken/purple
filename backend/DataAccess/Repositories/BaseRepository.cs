@@ -4,6 +4,7 @@ using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 using Z.Dapper.Plus;
 
@@ -49,7 +50,7 @@ namespace DataAccess.Repositories
 
         public IEnumerable<T> GetAll()
         {
-            return _connection.GetAll<T>();
+            return _connection.GetAll<T>().ToList();
         }
 
         public bool BulkInsert(IEnumerable<T> items)

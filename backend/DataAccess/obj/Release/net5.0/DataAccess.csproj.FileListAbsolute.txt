@@ -1,0 +1,17 @@
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\bin\Release\net5.0\DataAccess.deps.json
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\bin\Release\net5.0\DataAccess.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\bin\Release\net5.0\ref\DataAccess.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\bin\Release\net5.0\DataAccess.pdb
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\bin\Release\net5.0\Core.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\bin\Release\net5.0\Entities.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\bin\Release\net5.0\Core.pdb
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\bin\Release\net5.0\Entities.pdb
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\DataAccess.AssemblyInfo.cs
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\DataAccess.csproj.CopyComplete
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\DataAccess.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\ref\DataAccess.dll
+C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\DataAccess\obj\Release\net5.0\DataAccess.pdb

@@ -13,10 +13,10 @@ namespace Purple.Extensions
         {
             services.AddCors();
             services.AddControllers()
-                .AddNewtonsoftJson(options =>
-                {
-                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-                });
+            .AddNewtonsoftJson(options =>
+            {
+               options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+             });
             services.AddMvc(options =>
             {
                 options.EnableEndpointRouting = false;

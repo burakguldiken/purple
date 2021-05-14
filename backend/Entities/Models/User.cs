@@ -8,6 +8,7 @@ namespace Entities.Models
     [Table("User")]
     public class User : BaseEntity
     {
+        public int UserRole { get; set; }
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }

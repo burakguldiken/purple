@@ -18,5 +18,11 @@
             <param name="userForRegisterDto"></param>
             <returns></returns>
         </member>
+        <member name="M:Purple.Controllers.AuthController.GetUsers">
+            <summary>
+            Get all users
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

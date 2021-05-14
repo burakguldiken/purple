@@ -1,0 +1,23 @@
+{
+  "ConnString": "Server=165.227.154.43;Port=4580;Database=softwaretraining;Uid=root;Pwd=B.12345!;Allow User Variables=True;SslMode=None;Character Set=utf8",
+  "IpRateLimiting": {
+    "EnableEndpointRateLimiting": true,
+    "StackBlockedRequests": false,
+    "HttpStatusCode": 429,
+    "RealIPHeader": "X-Real-IP",
+    "ClientIdHeader": "X-ClientId",
+    "GeneralRules": [
+      {
+        "Endpoint": "*",
+        "Period": "1m",
+        "Limit": 100
+      }
+    ]
+  },
+  "TokenOptions": {
+    "Audience": "PurpleBackendApiVersion1",
+    "Issuer": "PurpleBackendApiVersion1",
+    "AccessTokenExpiration": 2,
+    "SecurityKey": "PurpleBackendApiVersion1"
+  }
+}

@@ -38,7 +38,9 @@ namespace Purple
             services.AddDataAccessDependencies();
             services.AddBusinessDependencies();
 
-            services.AddAutoMapper();
+            services.AddResponseCaching();
+
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddRateLimiting();
         }
@@ -53,6 +55,8 @@ namespace Purple
             app.UseIpRateLimiting();
 
             app.UseExceptionMiddleware();
+
+            app.UseResponseCaching();
 
             app.Configure();
         }

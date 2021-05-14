@@ -1,5 +1,4 @@
-﻿using Core.Entities;
-using Core.Extensions;
+﻿using Core.Extensions;
 using Core.Utilities.Environment;
 using Core.Utilities.Security.Encryption;
 using Entities.Models;

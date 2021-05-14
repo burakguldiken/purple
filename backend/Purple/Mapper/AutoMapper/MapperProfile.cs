@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Entities.CustomEntity.Request.User;
+using Entities.CustomEntity.Response;
 using Entities.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace Purple.Utilities.Mapper.AutoMapper
         public MapperProfile()
         {
             CreateMap<User, UserLoginRequestDto>();
+            CreateMap<User, UserListResponseDto>();
         }
     }
 }

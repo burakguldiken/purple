@@ -1,6 +1,7 @@
 ﻿using Core.Results;
 using Core.Utilities.Security.Jwt;
 using Entities.CustomEntity.Request.User;
+using Entities.CustomEntity.Response;
 using Entities.Models;
 using System;
 using System.Collections.Generic;
@@ -35,5 +36,10 @@ namespace Business.Interfaces
         /// <param name="password"></param>
         /// <returns></returns>
         IDataResult<User> Register(UserRegisterRequestDto userForRegisterDto);
+        /// <summary>
+        /// Get all users
+        /// </summary>
+        /// <returns></returns>
+        IDataResult<List<UserListResponseDto>> GetUsers(long userId);
     }
 }

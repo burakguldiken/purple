@@ -3,6 +3,7 @@ using Business.Constant.Messages;
 using Business.Enums;
 using Business.Interfaces;
 using Business.ValidationRules.User;
+using Core.Enums;
 using Core.Results;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.Jwt;
@@ -10,7 +11,10 @@ using Core.Validations.FluentValidation;
 using DataAccess;
 using DataAccess.IRepositories;
 using Entities.CustomEntity.Request.User;
+using Entities.CustomEntity.Response;
 using Entities.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Business.Services
 {
@@ -111,20 +115,28 @@ namespace Business.Services
             return new SuccessResult();
         }
 
-        //public long AddUser()
-        //{            
-        //    User req = new()
-        //    {
-        //        Id =5
-        //    };
+        /// <summary>
+        /// Get all users
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public IDataResult<List<UserListResponseDto>> GetUsers(long userId)
+        {
+            var currentUser = _unitOfWork.UserRepository.GetById(userId);
+            
+            if(currentUser is null)
+            {
+                return new ErrorDataResult<List<UserListResponseDto>>(ErrorMessages.UserNotFound);
+            }
 
-        //    var mappedObject = _mapper.Map<UserLoginRequestDto>(req);
+            if(currentUser.UserRole != (int)EnumUserRole.Admin)
+            {
+                return new ErrorDataResult<List<UserListResponseDto>>(ErrorMessages.Unauthorized);
+            }
 
-        //    var all = _unitOfWork.UserRepository.GetAll();
+            var users = _mapper.Map<List<UserListResponseDto>>(_unitOfWork.UserRepository.GetAll());
 
-        //    _unitOfWork.Commit();
-
-        //    return default;
-        //}
+            return new SuccessDataResult<List<UserListResponseDto>>(users);
+        }
     }
 }

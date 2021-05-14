@@ -2,6 +2,7 @@
 using Business.Interfaces;
 using DataAccess;
 using Entities.CustomEntity.Request.User;
+using Entities.CustomEntity.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,8 @@ namespace Purple.Controllers
     {
         IAuthService _authService;
 
-        public AuthController(IUnitOfWork _unitOfWork, IAuthService authService) : base(_unitOfWork)
+        public AuthController(IUnitOfWork _unitOfWork, IAuthService authService) 
+            : base(_unitOfWork)
         {
             _authService = authService;
         }
@@ -81,7 +83,26 @@ namespace Purple.Controllers
             _unitOfWork.Commit();
 
             return Ok(result.Data);
+        }
 
+        /// <summary>
+        /// Get all users
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("getusers")]
+        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
+        public IActionResult GetUsers()
+        {
+            var users  = _authService.GetUsers(GetUserId());
+
+            if(!users.Success)
+            {
+                return BadRequest(users.Message);
+            }
+
+            _unitOfWork.Commit();
+                
+            return Ok(users.Data);
         }
     }
 }
