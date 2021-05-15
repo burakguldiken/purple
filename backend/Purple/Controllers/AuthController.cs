@@ -50,8 +50,6 @@ namespace Purple.Controllers
                 return BadRequest(result.Message);
             }
 
-            _unitOfWork.Commit();
-
             return Ok(result.Data);
         }
 
@@ -100,8 +98,6 @@ namespace Purple.Controllers
                 return BadRequest(users.Message);
             }
 
-            _unitOfWork.Commit();
-                
             return Ok(users.Data);
         }
     }
