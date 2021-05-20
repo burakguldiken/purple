@@ -21,7 +21,7 @@ namespace DataAccess
             try
             {
                 Connections connectionInfo = Connections.Instance;
-                _connection = new MySqlConnection(connectionInfo.connString);
+                _connection = new MySqlConnection(connectionInfo._connString);
                 _connection.Open();
                 _transaction = _connection.BeginTransaction();
             }
