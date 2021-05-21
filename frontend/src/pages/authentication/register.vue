@@ -1,86 +1,109 @@
 <template>
-	<div>
-		<div class="container-fluid p-0"> 
-      <div class="row">
-        <div class="col-xl-5"><img class="bg-img-cover bg-center" src="../../assets/images/login/register2.jpg" alt="looginpage"></div>
-        <div class="col-xl-7 p-0"> 
-          <div class="login-card">
-            <div>
-              <div>
-				  <a class="logo">
-                  <img
-                    width="40%"
-                    class="img-fluid for-light"
-                    src="../../assets/images/logo/purplelogo.png"
-                    alt="looginpage"
-                  />
-                  <img
-                    width="40%"
-                    class="img-fluid for-dark"
-                    src="../../assets/images/logo/purplelogo.png"
-                    alt="looginpage"
-                  />
-                </a>
-				  </div>
-              <div class="login-main login-form-card"> 
-                <form class="theme-form">
-                  <h4>Create your account</h4>
-                  <p>Enter your personal details to create account</p>
-                  <div class="form-group">
-                    <label class="col-form-label pt-0">Your Name</label>
-                    <div class="form-row">
-                      <div class="col-6">
-                        <input class="form-control" type="text" required="" placeholder="First name">
+    <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row m-b-5">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-6 align-self-center">
+              <div class="text-right left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <h2>Sende Freelancer <em>Dünyasına Katıl</em></h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img width="80%" src="../../assets/images/login/registernew.png" alt="team meeting">
+              </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+              <div class="login-card b-r-10">
+                <div>
+                  <div class="login-main login-form-card shadow shadow-showcase"> 
+                    <form class="theme-form">
+                      <h4>Yeni Hesap Oluştur</h4>
+                      <p>Hesap oluşturup şimdi sende aramıza katıl</p>
+                      <div class="form-group">
+                        <label class="col-form-label pt-0">Ad Soyad</label>
+                        <div class="form-row">
+                          <div class="col-6">
+                            <input class="form-control" type="text" required="" placeholder="Ad">
+                          </div>
+                          <div class="col-6">
+                            <input class="form-control" type="text" required="" placeholder="Soyad">
+                          </div>
+                        </div>
                       </div>
-                      <div class="col-6">
-                        <input class="form-control" type="text" required="" placeholder="Last name">
+                      <div class="form-group">
+                        <label class="col-form-label">Email</label>
+                        <input class="form-control" type="email" required="" placeholder="Test@gmail.com">
                       </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label">Email Address</label>
-                    <input class="form-control" type="email" required="" placeholder="Test@gmail.com">
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label">Password</label>
-                    <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
-                    <div class="show-hide"><span class="show"></span></div>
-                  </div>
-                  <div class="form-group mb-0">
-                    <div class="checkbox p-0">
-                      <input id="checkbox1" type="checkbox">
-                      <label class="text-muted" for="checkbox1">Agree with<a class="ml-2" href="#">Privacy Policy</a></label>
-                    </div>
-                    <button class="btn btn-primary btn-block" type="submit">Create Account</button>
-                  </div>
-                  <h6 class="text-muted mt-4 or">Or signup with</h6>
-                  <div class="social mt-4">
-                  <div class="btn-showcase">
-                    <a class="btn btn-light">
-                      <i class="fa fa-google txt-linkedin"></i>
-                      Google
-                    </a>
-                    <a class="btn btn-light">
-                      <feather type="twitter" class="txt-twitter"></feather
-                      >twitter</a
-                    >
-                    <a class="btn btn-light">
-                      <feather type="facebook" class="txt-fb"></feather
-                      >facebook</a
-                    >
+                      <div class="form-group">
+                        <label class="col-form-label">Şifre</label>
+                        <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
+                        <div class="show-hide"><span @click="changePassVisibility" class="show txt-dark"><i class="icofont icofont-eye-alt f-16"></i></span></div>
+                      </div>
+                      <div class="form-group mb-0">
+                        <div class="checkbox p-0">
+                          <input id="checkbox1" type="checkbox">
+                          <label class="text-muted m-l-5" for="checkbox1">Beni Hatırla</label>
+                        </div>
+                        <button class="btn btn-dark btn-block" type="submit">Hesap Oluştur</button>
+                      </div>
+                      <h6 class="text-muted mt-4 or">Sosyal Medya İle</h6>
+                      <div class="social mt-4">
+                        <div class="btn-showcase">
+                          <a class="btn btn-light"><i class="fa fa-google txt-linkedin"></i>Google</a>
+                          <a class="btn btn-light"><feather type="twitter" class="txt-twitter"></feather>Twitter</a>
+                          <a class="btn btn-light"><feather type="github" class="txt-github"></feather>Github</a>
+                        </div>
+                      </div>
+                      <p class="mt-4 mb-0">Zaten Bir Hesabın Var Mı ?
+                        <router-link class="ml-2" tag="a" to="/authentication/login" >
+                          <span class="txt-secondary">Giriş Yap</span>
+                        </router-link>
+                      </p>
+                    </form>
                   </div>
                 </div>
-                  <p class="mt-4 mb-0">Already have an account?
-                    <router-link class="ml-2" tag="a" to="/authentication/login" >
-                            Login
-                          </router-link>
-                  </p>
-                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-	</div>
+  </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            user: {
+                password:"12345",
+                email:"Test@gmail.com"
+            },
+            passwordType:'password'
+        }
+    },
+
+    methods: {
+        changePassVisibility() {
+            this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
+        },
+
+        register() {
+            this.$router.push("/dashboard/purple");
+        }
+    },
+}
+</script>
+
+<style>
+@import "../../assets/css/fontawesome.css";
+@import "../../assets/css/templatemo-space-dynamictwo.css";
+@import "../../assets/css/animated.css";
+@import "../../assets/css/owl.css";
+</style>

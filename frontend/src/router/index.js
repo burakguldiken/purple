@@ -8,6 +8,7 @@ import SamplePage from '../pages/sample_page'
 //Authentication
 import Login from '../pages/authentication/login'
 import Register from '../pages/authentication/register'
+import Homepage from '../pages/authentication/homepage'
 
 //Dashboard
 import Purple from '../pages/dashboard/purple'
@@ -25,12 +26,14 @@ import NewJob from '../pages/ad/newjob'
 //Chat
 import Chat from '../pages/chat/chat'
 
-// component
+//Homepage
+import Home from '../pages/home/homepage'
+
 
 Vue.use(Router)
 
 const routes = [
-  { path: '', redirect: { name: 'Login' }},
+  { path: '', redirect: { name: 'Homepage' }},
   {
     path: '/dashboard',
     component: Body,
@@ -74,6 +77,14 @@ const routes = [
       component:Register,
       meta: {
           title: 'Register | Purple Admin Template',
+        }
+    },
+    {
+      path:'/authentication/homepage',
+      name:'Homepage',
+      component:Homepage,
+      meta: {
+          title: 'Homepage | Purple Admin Template',
         }
     },
     {
@@ -136,6 +147,19 @@ const routes = [
           component: Chat,
           meta: {
             title: 'Chat | Purple Admin Template',
+          }
+        },
+      ]},
+      {
+        path: '/home',
+        component: Body,
+        children: [
+        {
+          path: 'homepage',
+          name: 'homepage',
+          component: Home,
+          meta: {
+            title: 'Homepage | Purple Admin Template',
           }
         },
       ]},

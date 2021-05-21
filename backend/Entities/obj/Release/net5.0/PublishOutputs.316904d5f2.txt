@@ -1,5 +1,0 @@
-C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\bin\Release\net5.0\publish\Entities.dll
-C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\bin\Release\net5.0\publish\Entities.deps.json
-C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\bin\Release\net5.0\publish\Entities.pdb
-C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\bin\Release\net5.0\publish\Dapper.dll
-C:\Users\burak\Desktop\Burak Template\SourceTrreStarterKit\backend\Entities\bin\Release\net5.0\publish\Dapper.Contrib.dll

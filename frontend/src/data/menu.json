@@ -55,6 +55,19 @@
       ]
     },
     {
+      "title": "Home",
+      "icon": "message-circle",
+      "type": "sub",
+      "active": false,
+      "children": [
+        {
+          "path": "/home/homepage",
+          "title": "Chat",
+          "type": "link"
+        }
+      ]
+    },
+    {
       "title": "Other Operations",
       "icon": "droplet",
       "type": "sub",
