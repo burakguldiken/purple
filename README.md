@@ -2,7 +2,7 @@
 
 Purple freelance veya tam zamanlı bir iş arama platformudur.Bu platformda ilan oluşturmak veya diğer kullanıcılar ile iletişime geçmek için PCoin'e ihtiyaç duyulur.
 
-#### Tanımtım Videosunu İzlemek İçin Resme Tıklayınız
+#### Tanıtım Videosunu İzlemek İçin Resme Tıklayınız
 
 [![IMAGE ALT TEXT](preview.png)](https://www.youtube.com/watch?v=f9VsY8hdyQc "Video Title")
 
