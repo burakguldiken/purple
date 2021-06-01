@@ -1,2 +1,3 @@
-# purple
-It is a software project that offers the opportunity to work full, part-time or freelance.
+# Purple
+
+Purple freelance veya tam zamanlı bir iş arama platformudur.Bu platformda ilan oluşturmak veya diğer kullanıcılar ile iletişime geçmek için PCoin'e ihtiyaç duyulur.
