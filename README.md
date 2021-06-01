@@ -14,6 +14,7 @@ Purple kullanıcıların ilan yayınlayıp iş arayış süreçlerini yönetmeyi
 
 Real-time mesaj sistemi,İş süreçlerinin yönetilmesi için Kanban Board ve Canlı destek hattı
 
+<br>
 
 ## Kullanılan Teknolojiler
 
