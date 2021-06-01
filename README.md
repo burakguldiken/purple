@@ -4,7 +4,7 @@ Purple freelance veya tam zamanlı bir iş arama platformudur.Bu platformda ilan
 
 #### Tanımtım Videosunu İzlemek İçin Resme Tıklayınız
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=f9VsY8hdyQc "Video Title")
+[![IMAGE ALT TEXT](preview.png)](https://www.youtube.com/watch?v=f9VsY8hdyQc "Video Title")
 
 <br>
 
