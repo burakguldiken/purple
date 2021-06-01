@@ -5,7 +5,7 @@
       "type": "default",
       "body_type": "default"
     },
-    "sidebar_setting": "border-sidebar",
+    "sidebar_setting": "iconcolor-sidebar",
     "sidebar_background": "dark-sidebar"
   },
   "color": {

@@ -89,12 +89,15 @@
 
   .page-header {
     max-width: 100vw;
-    position: $main-header-position;
-    top: $main-header-top;
+    // // position: $main-header-position;
+    // top: $main-header-top;
     z-index: $main-header-z-index;
     transition: $sidebar-transition;
     background-color: $white;
-    box-shadow: $main-header-shadow;
+    // box-shadow: $main-header-shadow;
+    position:absolute;
+    left:0; right:0;
+    height: 80px;
 
     .header-wrapper {
       width: 100%;
@@ -443,10 +446,6 @@
 
         .notification-box {
           position: relative;
-
-          svg {
-            animation: tada 1.5s ease infinite;
-          }
         }
 
         .cart-box {
@@ -700,7 +699,7 @@
           height: 54px;
           line-height: inherit;
           top: 88px;
-          background: $white;
+          // background: $white;
           box-shadow: 0px 9px 24px rgba($semi-dark, 0.05);
           overflow-x: hidden;
           z-index: 1;
@@ -1068,8 +1067,8 @@
   // left sidebar css
   &.compact-wrapper {
     .page-header {
-      margin-left: 280px;
-      width: calc(100% - 280px);
+      // margin-left: 280px;
+      // width: calc(100% - 280px);
 
       &.close_icon {
         margin-left: 90px;
@@ -1091,13 +1090,15 @@
       &.sidebar-icon {
         div {
           &.sidebar-wrapper {
-            position: fixed;
-            top: 0;
-            z-index: 9;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
             height: 100%;
             line-height: inherit;
             background: $white;
-            width: 280px;
+            width: 500px;
             text-align: left;
             transition: 0.3s;
             box-shadow: 0 0 21px 0 rgba($semi-dark, 0.1);
@@ -1751,7 +1752,9 @@
         .page-body {
           min-height: calc(100vh - 80px);
           margin-top: 80px;
-          margin-left: 280px;
+          margin-left: 500px;
+          right: 0;
+          bottom: 0;
           // animation: pagebody 1000ms ease-in-out;
         }
       }

@@ -20,7 +20,7 @@ const mutations = {
     if (window.innerWidth < 1199) {
       state.togglesidebar = true
     } else {
-      state.togglesidebar = false
+      state.togglesidebar = true
     }
   },
   searchTerm: (state, term) => {

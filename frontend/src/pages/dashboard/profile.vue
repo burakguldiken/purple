@@ -1,184 +1,185 @@
 <template>
   <div>
-    <br /><br />
-    <div class="container-fluid">
-      <div class="user-profile">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="card hovercard text-center">
-              <div class="cardheader"></div>
-              <div class="user-image">
-                <div class="avatar">
-                  <img alt="" src="../../assets/images/user/7.jpg" />
-                </div>
-                <div class="icon-wrapper">
-                  <i class="icofont icofont-pencil-alt-5"></i>
-                </div>
-                <ul class="share-icons">
-                  <li>
-                    <a class="social-icon bg-primary" href="#"
-                      ><i class="fa fa-smile-o"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a class="social-icon bg-secondary" href="#"
-                      ><i class="fa fa-wechat"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a class="social-icon bg-warning" href="#"
-                      ><i class="fa fa-share-alt"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="info m-t-20">
-                <div class="row">
-                  <div class="col-sm-6 col-lg-4 order-sm-1 order-xl-0">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="ttl-info text-left">
-                          <h5><i class="fa fa-envelope mr-2"></i>Email</h5>
-                          <span>Marekjecno@yahoo.com</span>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="ttl-info text-left">
-                          <h5><i class="fa fa-calendar mr-2"></i>BOD</h5>
-                          <span>02 January 1988</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-lg-4 order-sm-0 order-xl-1">
-                    <div class="user-designation">
-                      <div class="title">
-                        <a target="_blank" href="">Mark jecno</a>
-                      </div>
-                      <div class="desc mt-2">designer</div>
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-lg-4 order-sm-2 order-xl-2">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="ttl-info text-left">
-                          <h5><i class="fa fa-phone mr-2"></i>Contact Us</h5>
-                          <span>India +91 123-456-7890</span>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="ttl-info text-left">
-                          <h5>
-                            <i class="fa fa-location-arrow mr-2"></i>Location
-                          </h5>
-                          <span>B69 Near Schoool Demo Home</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+    <br/><br/>
+    <div class="container-fluid p-l-50">
+      <div class="row">
+        <div class="col-4">
+          <b-card header-tag="div" class="shadow-sm">
+            <div class="text-right">
+              <span class="txt-success fw-bold">Düzenle</span>
+            </div>
+            <div class="text-center pt-4 pb-5">
+              <div class="avatars">
+                <div class="avatar"><img class="img-100 rounded-circle shadow-lg" :src='"../../assets/images/dashboard/myimage.jpeg"' alt="#">
+                  <div class="status status-100 bg-success"> </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-12">
-            <div class="card">
-              <div class="profile-img-style">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <div class="media">
-                      <img
-                        class="img-thumbnail rounded-circle mr-3"
-                        src="../../assets/images/user/7.jpg"
-                        alt="Generic placeholder image"
-                      />
-                      <div class="media-body align-self-center">
-                        <h5 class="mt-0 user-name">About</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 align-self-center">
-                    <div class="float-sm-right">
-                      <small>10 Hours ago</small>
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <p>
-                  Contrary to popular belief, Lorem Ipsum is not simply random
-                  text. It has roots in a piece of classical Latin literature
-                  from 45 BC, making it over 2000 years old. Richard McClintock,
-                  a Latin professor at Hampden-Sydney College in Virginia,
-                  looked up one of the more obscure Latin words, consectetur,
-                  from a Lorem Ipsum passage, and going through the cites of the
-                  word in classical literature, discovered the undoubtable
-                  source .Contrary to popular belief, Lorem Ipsum is not simply
-                  random text. It has roots in a piece of classical Latin
-                  literature from 45 BC, making it over 2000 years old. Richard
-                  McClintock, a Latin professor at Hampden-Sydney College in
-                  Virginia, looked up one of the more obscure Latin words,
-                  consectetur, from a Lorem Ipsum passage, and going through the
-                  cites of the word in classical literature, discovered the
-                  undoubtable source
-                </p>
+            <b-card-text>
+              <div class="text-center">
+                <h6 class="fw-bold">Burak Güldiken</h6>
+                <p class="text-muted">Full-Stack Developer</p>
+              </div>
+              <div class="text-center m-t-30">
+                <span class="f-w-300"><span class="fw-bold">Purple</span>'da profiliniz ne kadar güçlü ise size o kadar daha iyi hizmet sağlayabilmekteyiz.Bu sebeple profilinizdeki bilgiler dahilinde profilinizle eşleşen ilanları size gösterebiliriz.</span>
+              </div>
+              <div class="text-center m-t-30">
+                <b-button id="default-sm-primary" variant="primary" size="sm">İlanlarıma Git</b-button>
+              </div>
+            </b-card-text>
+            <div class="row b-t-light">
+              <div class="col-6 m-t-10 text-left">
+                <small class="f-w-500">Son Görülme</small>
+              </div>
+              <div class="col-6 m-t-10 text-right">
+                <small class="f-w-500 txt-success">Çevrimiçi</small>
+              </div>
+              <div class="col-6 m-t-10 text-left">
+                <small class="f-w-500">İlan Sayısı</small>
+              </div>
+              <div class="col-6 m-t-10 text-right">
+                <small class="f-w-300">3</small>
+              </div>
+              <div class="col-6 m-t-10 text-left">
+                <small class="f-w-500">Üyelik Tarihi</small>
+              </div>
+              <div class="col-6 m-t-10 text-right">
+                <small class="f-w-300">20 May 2020</small>
               </div>
             </div>
-          </div>
-          <div>
-            <div class="row m-l-5 m-r-1">
-              <div class="col-sm-12">
-                <div class="card">
-                  <div class="profile-img-style">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <div class="media">
-                          <img
-                            class="img-thumbnail rounded-circle mr-3"
-                            src="../../assets/images/user/7.jpg"
-                            alt="Generic placeholder image"
-                          />
-                          <div class="media-body align-self-center">
-                            <h5 class="mt-0 user-name">Portfolio</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-4 align-self-center">
-                        <div class="float-sm-right">
-                          <small>10 Hours ago</small>
-                        </div>
-                      </div>
-                    </div>
+          </b-card>
+        </div>
+        <div class="col-8">
+          <b-card header-tag="div" class="shadow-sm">
+            <div class="row m-b-50">
+              <div class="col-6 text-left">
+                <span class="f-w-600">İlanlarım</span>
+              </div>
+              <div class="col-6 text-right">
+                <span class="txt-success fw-bold">İlanlarımı Görüntüle</span>
+              </div>
+            </div>
+            <b-card-text class="text-center m-t-50">
+              <div class="row justify-content-center">
+                <div class="col-9">
+                  <img class="img-fluid rounded" :src='"../../assets/images/profile-adverb.png"' alt=""/>
+                </div>
+              </div>
+              <div class="row justify-content-center m-t-30">
+                <div class="col-8">
+                  <h2 class="fw-bold"><span class="f-w-400">İlanlarını </span>Yönet</h2>
+                </div>
+                <div class="col-10">
+                  <h6 class="text-muted f-w-400 m-t-20">Sevgili <span class="fw-bold">Burak</span>, aktif ilanın yok gözüküyor. İlanlarım sayfasından tüm ilanlarını yönetebilirsin.</h6>
+                </div>
+              </div>
+              <div class="row text-center justify-content-center m-t-40">
+                <div class="col-4">
+                  <b-button id="default-sm-secondary" variant="secondary" size="sm">İlanlarıma Git</b-button>
+                </div>
+              </div>
+            </b-card-text>
+          </b-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <b-card header-tag="div" class="shadow-sm">
+            <div class="row" slot="header">
+              <div class="col-6 text-left">
+                <h6 class="f-w-500">Hakkında</h6>
+              </div>
+              <div class="col-6 text-right">
+                <h7 class="fw-bold txt-success">Düzenle</h7>
+              </div>
+              <div class="col-12 m-t-20">
+                <small class="text-muted f-w-500">Backend tarafında .Net core,RabbitMQ,Redis gibi teknolojiler frontend tarafında ise vue.js ile geliştirmeler yapabilirim.</small>
+              </div>
+            </div>
+            <b-card-text>
+              <div class="row m-b-10">
+                <h6 class="f-w-500">Uzmanı Olduğu Alanlar & Araçlar</h6>
+              </div>
+              <div class="row">
+                <div class="col-6 text-left m-b-5">
+                  <b-button style="pointer-events:none;" id="default-outline-light-md" variant="outline-light" size="md"  class="btn-square btn-outline-light b-r-5 shadow-sm"><small class="text-muted f-w-500">.Net Core</small></b-button>
+                </div>
+                <div class="col-6 text-left m-b-5">
+                  <b-button style="pointer-events:none;" id="default-outline-light-md" variant="outline-light" size="md"  class="btn-square btn-outline-light b-r-5 shadow-sm"><small class="text-muted f-w-500">Dapper</small></b-button>
+                </div>
+                <div class="col-6 text-left m-b-5">
+                  <b-button style="pointer-events:none;" id="default-outline-light-md" variant="outline-light" size="md"  class="btn-square btn-outline-light b-r-5 shadow-sm"><small class="text-muted f-w-500">Vue.js</small></b-button>
+                </div>
+                <div class="col-6 text-left m-b-5">
+                  <b-button style="pointer-events:none;" id="default-outline-light-md" variant="outline-light" size="md"  class="btn-square btn-outline-light b-r-5 shadow-sm"><small class="text-muted f-w-500">Javascript</small></b-button>
+                </div>
+                <div class="col-6 text-left m-b-5">
+                  <b-button style="pointer-events:none;" id="default-outline-light-md" variant="outline-light" size="md"  class="btn-square btn-outline-light b-r-5 shadow-sm"><small class="text-muted f-w-500">RabbitMQ</small></b-button>
+                </div>                
+              </div>
+              <div class="row m-t-40">
+                <h6 class="f-w-500">İletişim Bilgileri</h6>
+                <div class="row m-t-10">
+                  <div class="col-4 text-left">
+                    <span class="f-w-500">Email :</span>
                   </div>
-                  <div
-                    class="my-gallery card-body row gallery-with-description"
-                    itemscope=""
-                  >
-                    <VueGallery
-                      :images="bigimages"
-                      :index="index"
-                      @close="index = null"
-                    ></VueGallery>
-                    <figure
-                      class="col-xl-3 col-sm-6 m-0"
-                      v-for="(figure, imageIndex) in figureslist"
-                      :key="imageIndex"
-                    >
-                      <a @click="index = imageIndex">
-                        <img
-                          :src="require('../../assets/images/' + figure.image)"
-                          alt="Image description"
-                          class="img-fluid"
-                        />
-                        <div class="caption">
-                          <h4 v-text="figure.title"></h4>
-                          <p v-text="figure.descr"></p>
-                        </div>
-                      </a>
-                    </figure>
+                  <div class="col-8 text-center">
+                    <small>burakguldiken@test.com</small>
+                  </div>
+                  <div class="col-4 text-left m-t-10">
+                    <span class="f-w-500">Telefon :</span>
+                  </div>
+                  <div class="col-8 text-center m-t-10">
+                    <small>Bulunamadı</small>
                   </div>
                 </div>
               </div>
+            </b-card-text>
+          </b-card>
+        </div>
+        <div class="col-8">
+          <b-card header-tag="div" class="shadow-sm">
+            <div class="row m-b-50">
+              <div class="col-6 text-left">
+                <span class="fw-bold">Değerlendirmeler</span>
+              </div>
+              <div class="col-6 text-right">
+                <b-button id="default-sm-secondary" variant="secondary" size="sm">Yorum Ekle</b-button>
+              </div>
             </div>
-          </div>
+            <b-card-text class="text-center news">
+                <div class="row b-b-light">
+                  <div class="col-2 m-b-20">
+                    <img class="img-50 rounded-circle shadow-lg" :src='"../../assets/images/user/4.jpg"' alt=""/>
+                  </div>
+                  <div class="col-10 m-b-20 text-left">
+                    <h6 class="fw-bold">Harry Kewell.</h6>
+                    <span class="text-muted">.Net tarafında size rahatlıkla yardımcı olabilir</span>
+                  </div>
+                </div>
+                <div class="row m-t-30 b-b-light">
+                  <div class="col-2 m-b-20">
+                    <img class="img-50 rounded-circle shadow-lg" :src='"../../assets/images/user/1.jpg"' alt=""/>
+                  </div>
+                  <div class="col-10 m-b-20 text-left">
+                    <h6 class="fw-bold">Milan Baros</h6>
+                    <span class="text-muted">Kendisiyle çalışmak çok keyifliydi</span>
+                  </div>
+                </div>
+                <div class="row m-t-30 m-b-30 b-b-light">
+                  <div class="col-2 m-b-20">
+                    <img class="img-50 rounded-circle shadow-lg" :src='"../../assets/images/user/5.jpg"' alt=""/>
+                  </div>
+                  <div class="col-10 m-b-20 text-left">
+                    <h6 class="fw-bold">Abdul Kader Keita</h6>
+                    <span class="text-muted">Harika..!</span>
+                  </div>
+                </div>
+                <div slot="footer" class="text-right">
+                  <span>Toplam: 5 Yorum</span>
+                </div>
+            </b-card-text>
+          </b-card>
         </div>
       </div>
     </div>

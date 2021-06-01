@@ -1,13 +1,13 @@
 <template>
     <div>
         <br><br>
-        <div class="container-fluid">
+        <div class="container-fluid m-l-50">
             <div class="row">
                 <div class="col-6">
                     <div class="knowledgebase-search">
                         <div>
-                        <h3>Choose the Package You Want Start Using Now</h3>
-                        <p class="text-muted mt-3 mb-0">You can reach thousands of candidates by posting your advertisements.</p>
+                        <h3>Şimdi Sende Paketini Seç Hemen Kullanmaya Başla</h3>
+                        <p class="text-muted mt-3 mb-0">PCoinler ile diğer kullanıcılara mesaj gönderebilir ya da yeni ilanlar oluşturabilirsin.</p>
                         </div>
                     </div>
                 </div>
@@ -23,52 +23,52 @@
             </div>
             <div class="row">
               <div class="col-sm-12">
-                <px-card title="Packages">
-                  <div slot="with-padding">
-                    <div class="row">
+                <!-- <px-card title="Paketler"> -->
+                  <!-- <div slot="with-padding"> -->
+                    <div class="row m-t-50 m-b-50">
                     <div class="col-md-4 col-sm-6">
-                      <div class="pricingtable">
+                      <div class="pricingtable shadow-lg">
                         <div class="pricingtable-header">
-                          <h3 class="title">Standard</h3>
+                          <h3 class="m-b-20">Standard Paket</h3>
                         </div>
-                        <div class="price-value"><span class="currency">$</span><span class="amount">1</span><span class="duration">/Unlimited</span></div>
+                        <div class="price-value"><span class="currency">$</span><span class="f-36 fw-bold">10</span><span class="duration"> /Sınırsız</span></div>
                         <ul class="pricing-content">
-                          <li>1 Posting Right</li>
-                          <li>No Time Limit</li>
-                          <li>Unlimited Email Rights</li>
-                          <li>Lifetime support</li>
+                          <li>1000 PCoin</li>
+                          <li>Zaman Limiti Yok</li>
+                          <li>Mesaj Göndermede Kullanılabilir</li>
+                          <li>Ömür Boyu Destek</li>
                         </ul>
-                        <div><b-button v-b-modal.modal-lg variant="primary">Purchase</b-button></div>
+                        <div><b-button v-b-modal.modal-lg variant="primary">Satın Al</b-button></div>
                       </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                      <div class="pricingtable">
+                      <div class="pricingtable shadow-lg">
                         <div class="pricingtable-header">
-                          <h3 class="title">Bronz</h3>
+                          <h3 class="m-b-20">Bronz Paket</h3>
                         </div>
-                        <div class="price-value"><span class="currency">$</span><span class="amount">5</span><span class="duration">/Unlimited</span></div>
+                        <div class="price-value"><span class="currency">$</span><span class="f-36 fw-bold">45</span><span class="duration"> /Sınırsız</span></div>
                         <ul class="pricing-content">
-                          <li>10 Posting Right</li>
-                          <li>No Time Limit</li>
-                          <li>Unlimited Email Rights</li>
-                          <li>Lifetime support</li>
+                          <li>5000 PCoin</li>
+                          <li>Zaman Limiti Yok</li>
+                          <li>Mesaj Göndermede Kullanılabilir</li>
+                          <li>Ömür Boyu Destek</li>
                         </ul>
-                        <div><b-button v-b-modal.modal-lg variant="primary">Purchase</b-button></div>
+                        <div><b-button v-b-modal.modal-lg variant="primary">Satın Al</b-button></div>
                       </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                      <div class="pricingtable">
+                      <div class="pricingtable shadow-lg">
                         <div class="pricingtable-header">
-                          <h3 class="title">Premium</h3>
+                          <h3 class="m-b-20">Premium Paket</h3>
                         </div>
-                        <div class="price-value"><span class="currency">$</span><span class="amount">9</span><span class="duration">/Unlimited</span></div>
+                        <div class="price-value"><span class="currency">$</span><span class="f-36 fw-bold">90</span><span class="duration"> /Sınırsız</span></div>
                         <ul class="pricing-content">
-                          <li>Unlimited Advertisement Rights</li>
-                          <li>No Time Limit</li>
-                          <li>Unlimited Email Rights</li>
-                          <li>Lifetime support</li>
+                          <li>10000 PCoin</li>
+                          <li>Zaman Limiti Yok</li>
+                          <li>Mesaj Göndermede Kullanılabilir</li>
+                          <li>Ömür Boyu Destek</li>
                         </ul>
-                        <div><b-button v-b-modal.modal-lg variant="primary">Purchase</b-button></div>
+                        <div><b-button v-b-modal.modal-lg variant="primary">Satın Al</b-button></div>
                         <b-modal icon="calendar" id="modal-lg" size="lg" title="Payment" class="theme-modal">
                           <div class="row">
                             <div class="col-xl-12">
@@ -118,8 +118,8 @@
                     </div>
                   </div>
                   </div>
-                </px-card>
-              </div>
+                <!-- </px-card>
+              </div> -->
             </div>
           </div>
     </div>

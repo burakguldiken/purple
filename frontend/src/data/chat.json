@@ -62,7 +62,7 @@
         "thumb": "user/8.jpg",
         "status": "first bun like a sun.",
         "lastSeenDate":"Last seen yesterday 10:50",
-        "active": "deactive"
+        "active": "active"
       },
       {
         "id": 8,
@@ -70,7 +70,7 @@
         "thumb": "user/9.jpg",
         "status": "Change for anyone.",
         "lastSeenDate":"Last seen yesterday 06:47",
-        "active": "deactive"
+        "active": "active"
       },
       {
         "id": 9,
@@ -78,11 +78,43 @@
         "thumb": "user/10.jpg",
         "status": "Change for anyone.",
         "lastSeenDate":"Last seen yesterday 20:07",
-        "active": "deactive"
+        "active": "active"
       },
       {
         "id": 10,
         "name": "Porter Ginger",
+        "thumb": "user/11.png",
+        "status": "Change for anyone.",
+        "lastSeenDate":"Last seen yesterday 14:14",
+        "active": "active"
+      },
+      {
+        "id": 11,
+        "name": "Porter Ginger2",
+        "thumb": "user/11.png",
+        "status": "Change for anyone.",
+        "lastSeenDate":"Last seen yesterday 14:14",
+        "active": "deactive"
+      },
+      {
+        "id": 12,
+        "name": "Porter Ginger3",
+        "thumb": "user/11.png",
+        "status": "Change for anyone.",
+        "lastSeenDate":"Last seen yesterday 14:14",
+        "active": "deactive"
+      },
+      {
+        "id": 13,
+        "name": "Porter Ginger4",
+        "thumb": "user/11.png",
+        "status": "Change for anyone.",
+        "lastSeenDate":"Last seen yesterday 14:14",
+        "active": "deactive"
+      },
+      {
+        "id": 14,
+        "name": "Porter Ginger5",
         "thumb": "user/11.png",
         "status": "Change for anyone.",
         "lastSeenDate":"Last seen yesterday 14:14",
@@ -100,22 +132,22 @@
         "messages": [
           {
             "sender": 0,
-            "time": "10:12 am",
+            "time": "10:12",
             "text": "Are we meeting today? Project has been already finished and I have results to show you."
           },
           {
             "sender": 1,
-            "time": "10:14 am",
+            "time": "10:14",
             "text": "Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so?."
           },
           {
             "sender": 1,
-            "time": "10:14 am",
+            "time": "10:14",
             "text": "Well I am not sure. The rest of the team."
           },
           {
             "sender": 0,
-            "time": "10:20 am",
+            "time": "10:20",
             "text": "Actually everything was fine. I'm very excited to show this to our team."
           }
         ]

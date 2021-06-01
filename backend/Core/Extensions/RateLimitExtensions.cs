@@ -17,7 +17,7 @@ namespace Core.Extensions
         {
             services.AddOptions();
             services.AddMemoryCache();
-            services.Configure<IpRateLimitOptions>(EnvironmentManager.Instance.Get_Configuration().GetSection("IpRateLimiting"));
+            services.Configure<IpRateLimitOptions>(EnvironmentManager.Instance.GetConfiguration().GetSection("IpRateLimiting"));
             services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
             services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
             services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();

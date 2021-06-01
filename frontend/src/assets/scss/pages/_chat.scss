@@ -38,8 +38,8 @@
   }
   .user-image {
     float: left;
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
     margin-right: 5px;
   }
   .about {
@@ -106,34 +106,33 @@
         }
         .message {
           color: $dark-color;
-          padding: 20px;
-          line-height: 1.9;
-          letter-spacing: 1px;
-          font-size: 14px;
+          padding: 15px;
+          font-size: 10px;
           margin-bottom: 30px;
-          width: 35%;
+          width: 50%;
           position: relative;
         }
         .my-message {
           border-radius: 10px;
           border-top-left-radius: 0;
-          background-color: $dark-color;
-          color: white;
-          border-top-left-radius:30px;
+          background-color: white;
+          color: black;
         }
         .other-message {
           color: white;
-          background-color: $primary-color;
+          background-color: rgb(121, 224, 121);
           border-radius: 10px;
-          border-top-right-radius: 0;
-          border-top-right-radius:30px;
+          border-top-right-radius: 5px;
         }
       }
       .chat-message {
-        padding: 20px;
+        padding-top: 20px;
+        padding-bottom:20px;
+        left:20px;
+        border-radius: 15px;
         border-top: 1px solid $light-body-bg-color;
         position: absolute;
-        width: calc(100% - 15px);
+        width: calc(100% - 40px);
         background-color: $white;
         bottom: 0;
         .smiley-box{
@@ -324,6 +323,7 @@
   }
   .people-list{
     height: 625px;
+    overflow-y:auto;
   }
   ul li{
     position: relative;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <br />
-    <div class="container-fluid">
+    <div class="container-fluid p-l-50">
       <div class="row">
         <div class="col-6">
           <div class="knowledgebase-search">

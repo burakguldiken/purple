@@ -16,7 +16,7 @@ namespace Core.CrossCuttingCorners.FileServer
 
         public MinioService()
         {
-            _minioClient = Connections.Instance._minioClient;
+            //_minioClient = ConnectionHelper.Instance.MinioConnection();
         }
 
         /// <summary>

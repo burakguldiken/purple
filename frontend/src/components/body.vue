@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-wrapper" :class="layout.settings.sidebar.type == 'horizontal_sidebar' ? 'horizontal-wrapper' : 'compact-wrapper'">
-      <div class="page-header" :class="{ close_icon:!togglesidebar }">
+      <div class="page-header shadow shadow-showcase" :class="{ close_icon:!togglesidebar }">
         <Header @clicked="sidebar_toggle" />
       </div>
       <div class="page-body-wrapper" :class="layout.settings.sidebar.type == 'horizontal_sidebar' ? 'horizontal-menu' : 'sidebar-icon'">
@@ -10,12 +10,13 @@
         </div>
         <div class="page-body">
           <transition name="fadeIn" enter-active-class="animated fadeIn">
-           <router-view class="view"></router-view>
+           <router-view class="view" style="max-width:1200px"></router-view>
           </transition>
         </div>
       </div>
       <Customizer/>
     </div>
+    <Footer/>
   </div>
 </template>
 

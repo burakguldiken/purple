@@ -16,7 +16,7 @@ namespace Core.CrossCuttingCorners.Queue.RabbitMq
 
         public RabbitMqService()
         {
-            _context = Connections.Instance._rabbitMqConnection.CreateConnection();
+            //_context = ConnectionHelper.Instance.RabbitMqConnection();
         }
 
         /// <summary>
@@ -39,9 +39,7 @@ namespace Core.CrossCuttingCorners.Queue.RabbitMq
                                         arguments: null);
 
                     var arr = Encoding.UTF8.GetBytes(body);
-
                     channel.BasicPublish("", queueName, null, arr);
-
                     response = true;
                 }
             }
@@ -71,15 +69,12 @@ namespace Core.CrossCuttingCorners.Queue.RabbitMq
                                         arguments: null);
 
                     var consumer = new EventingBasicConsumer(channel);
-
                     consumer.Received += (model, ea) =>
                     {
                         var body = ea.Body.ToArray();
                         var message = Encoding.UTF8.GetString(body);
                     };
-
                     channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
-
                     response = true;
                 }
             }

@@ -15,11 +15,6 @@ namespace Core.CrossCuttingCorners.Cache.Redis
         /// <returns></returns>
         ConnectionMultiplexer GetConnectionMultiplexer();
         /// <summary>
-        /// Used To Connect To Redis Server
-        /// </summary>
-        /// <returns></returns>
-        void Connect();
-        /// <summary>
         /// Returns the Database Context to Connect to
         /// </summary>
         /// <param name="id">Database Id</param>

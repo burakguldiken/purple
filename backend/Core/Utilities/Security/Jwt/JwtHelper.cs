@@ -19,8 +19,9 @@ namespace Core.Utilities.Security.Jwt
 
         public JwtHelper()
         {
-            _tokenOptions = EnvironmentManager.Instance.Get_Configuration().GetSection("TokenOptions").Get<TokenOptions>();
+            _tokenOptions = EnvironmentManager.Instance.GetConfiguration().GetSection("TokenOptions").Get<TokenOptions>();
         }
+
         public AccessToken CreateToken(User user)
         {
             _accessTokenExpiration = DateTime.Now.AddHours(_tokenOptions.AccessTokenExpiration);

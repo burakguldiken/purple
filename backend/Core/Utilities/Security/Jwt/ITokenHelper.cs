@@ -9,6 +9,11 @@ namespace Core.Utilities.Security.Jwt
 {
     public interface ITokenHelper
     {
+        /// <summary>
+        /// Create a new jwt token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         AccessToken CreateToken(User user);
     }
 }

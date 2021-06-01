@@ -169,6 +169,264 @@ $badge-light-color in (primary, $primary-color),
   }
 }
 
+.invoice-info {
+  background-image: url(../images/dashboard/fatura-bilgi.jpeg);
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  border-radius: 15px;
+  height:295px;
+
+  .card{
+    background: transparent;
+  }
+
+  .card-body {
+    padding: 40px 20px;
+  }
+
+  .badge-groups {
+    .badge {
+      &.f-12 {
+        svg, i {
+          width: 16px;
+          height: 16px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .media {
+    .media-body {
+      p {
+        font-weight: 500;
+        font-size: 10px;
+      }
+    }
+
+    .badge-groups {
+      display: flex;
+      justify-content: space-between;
+
+      .badge {
+        color: $white !important;
+        padding: 10px 14px !important;
+
+        .fa-spin{
+    width: auto;
+    height: auto;
+    padding-top: 0;
+        }
+
+        &:first-child {
+          display: flex;
+          align-items: center;
+          background: linear-gradient(90deg, $transparent-color 28%, rgba($white, 0.1) 100%);
+          border-radius: 5px;
+        }
+
+        &:last-child {
+          background: linear-gradient(90deg, rgba($white, 0.1) 20%, $transparent-color 100%);
+          border-radius: 5px;
+          width: 56px;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .greeting-user {
+    margin: 42px 0;
+
+    h4 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      color: $white;
+    }
+
+    p {
+      font-weight: 500;
+      padding: 0 50px;
+      margin-bottom: 25px;
+
+      span {
+        color: rgba($white, 0.8);
+      }
+    }
+
+    .profile-vector {
+      filter: drop-shadow(15px 17px 12px rgba($black, 0.1));
+    }
+
+    .right-circle {
+      i {
+        padding: 5px 6px;
+        background-color: rgba($white, 0.2);
+        border-radius: 100%;
+      }
+    }
+
+    .left-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba($white, 0.1);
+      border-radius: 20px 20px 20px 10px;
+      position: absolute;
+      left: 4%;
+      bottom: 4%;
+
+      i {
+        color: $white;
+        margin-top: 38%;
+        transform: translateY(-50%);
+        animation: tada 1.5s ease infinite;
+      }
+    }
+  }
+
+  .whatsnew-btn {
+    .btn {
+      background-color: $white !important;
+      border-radius: 5px;
+      color: var(--theme-deafult);
+      font-weight: 500;
+      padding: 6px 18px;
+      font-size: 14px;
+    }
+  }
+}
+
+.purple-detail {
+  background-image: url(../images/dashboard/sistem-calismasi.jpeg);
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  border-radius: 15px;
+  height:295px;
+
+  .card{
+    background: transparent;
+  }
+
+  .card-body {
+    padding: 40px 20px;
+  }
+
+  .badge-groups {
+    .badge {
+      &.f-12 {
+        svg, i {
+          width: 16px;
+          height: 16px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .media {
+    .media-body {
+      p {
+        font-weight: 500;
+        font-size: 10px;
+      }
+    }
+
+    .badge-groups {
+      display: flex;
+      justify-content: space-between;
+
+      .badge {
+        color: $white !important;
+        padding: 10px 14px !important;
+
+        .fa-spin{
+    width: auto;
+    height: auto;
+    padding-top: 0;
+        }
+
+        &:first-child {
+          display: flex;
+          align-items: center;
+          background: linear-gradient(90deg, $transparent-color 28%, rgba($white, 0.1) 100%);
+          border-radius: 5px;
+        }
+
+        &:last-child {
+          background: linear-gradient(90deg, rgba($white, 0.1) 20%, $transparent-color 100%);
+          border-radius: 5px;
+          width: 56px;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .greeting-user {
+    margin: 42px 0;
+
+    h4 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      color: $white;
+    }
+
+    p {
+      font-weight: 500;
+      padding: 0 50px;
+      margin-bottom: 25px;
+
+      span {
+        color: rgba($white, 0.8);
+      }
+    }
+
+    .profile-vector {
+      filter: drop-shadow(15px 17px 12px rgba($black, 0.1));
+    }
+
+    .right-circle {
+      i {
+        padding: 5px 6px;
+        background-color: rgba($white, 0.2);
+        border-radius: 100%;
+      }
+    }
+
+    .left-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba($white, 0.1);
+      border-radius: 20px 20px 20px 10px;
+      position: absolute;
+      left: 4%;
+      bottom: 4%;
+
+      i {
+        color: $white;
+        margin-top: 38%;
+        transform: translateY(-50%);
+        animation: tada 1.5s ease infinite;
+      }
+    }
+  }
+
+  .whatsnew-btn {
+    .btn {
+      background-color: $white !important;
+      border-radius: 5px;
+      color: var(--theme-deafult);
+      font-weight: 500;
+      padding: 6px 18px;
+      font-size: 14px;
+    }
+  }
+}
+
 .earning-card {
   .card {
     .card-body {

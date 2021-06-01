@@ -7,17 +7,25 @@ namespace Core.Utilities.Environment
 {
     public class EnvironmentManager
     {
+        private IConfiguration _configuration = null;
+
         private static volatile EnvironmentManager _environmentManager;
         private static object lockObject = new object();
 
+        private string _environmentName = "";
+        private string _environmentVariableKey = "PURPLE_ENVIRONMENT";
+
+        public bool IsDevelopment() => _environmentName == "Development" ? true : false;
+        public bool IsProduction() => _environmentName == "Production" ? true : false;
+
         public EnvironmentManager()
         {
-            Get_EnvironmentName();
+            GetEnvironmentName();
         }
 
-        private IConfiguration configuration = null;
-        private string environmentName = "";
-
+        /// <summary>
+        /// Create a new instance
+        /// </summary>
         public static EnvironmentManager Instance
         {
             get
@@ -31,41 +39,47 @@ namespace Core.Utilities.Environment
             }
         }
 
-        public string Get_EnvironmentName()
+        /// <summary>
+        /// Get current environment name
+        /// </summary>
+        /// <returns></returns>
+        public string GetEnvironmentName()
         {
-            if (String.IsNullOrEmpty(environmentName))
+            if (String.IsNullOrEmpty(_environmentName))
             {
                 try
                 {
-                    environmentName = System.Environment.GetEnvironmentVariable("PURPLE_ENVIRONMENT").ToLower();
+                    _environmentName = System.Environment.GetEnvironmentVariable(_environmentVariableKey).ToLower();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine(ex.Message);
-                    throw;
+                    throw new Exception($"{_environmentVariableKey} değeri null");
                 }
             }
-            return environmentName;
+            return _environmentName;
         }
 
-        public IConfiguration Create_Configuration()
+        /// <summary>
+        /// Create new configuration
+        /// </summary>
+        /// <returns></returns>
+        public IConfiguration CreateConfiguration()
         {
-            if (configuration == null)
+            if (_configuration == null)
             {
-                var builder = new ConfigurationBuilder().AddJsonFile($"{Get_EnvironmentName()}.json", true, true);
-                configuration = builder.Build();
+                var builder = new ConfigurationBuilder().AddJsonFile($"{GetEnvironmentName()}.json", true, true);
+                _configuration = builder.Build();
             }
-            return configuration;
+            return _configuration;
         }
 
-        public IConfiguration Get_Configuration()
+        /// <summary>
+        /// Get current configuration
+        /// </summary>
+        /// <returns></returns>
+        public IConfiguration GetConfiguration()
         {
-            configuration = Create_Configuration();
-            return configuration;
+            return _configuration = CreateConfiguration();
         }
-
-        public bool Is_Development() => environmentName == "Development" ? true : false;
-
-        public bool Is_Production() => environmentName == "Production" ? true : false;
     }
 }

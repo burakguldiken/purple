@@ -3,84 +3,84 @@
     {
       "headTitle1": "General",
       "headTitle2": "Homepage,Profile Page.",
-      "type": "headtitle"
+      "type": "headtitle bg-secondary"
     },
     {
-      "title": "Dashboard",
+      "title": "Purple",
       "icon": "home",
       "type": "sub",
       "active": false,
       "children": [
         {
           "path": "/dashboard/purple",
-          "title": "Homepage",
+          "title": "Anasayfa",
           "type": "link"
         },
         {
           "path": "/dashboard/profile",
-          "title": "Profile",
+          "title": "Profilim",
           "type": "link"
         }
       ]
     },
     {
-      "title": "Advertisements",
+      "title": "İlanlar",
       "icon": "activity",
       "type": "sub",
       "active": false,
       "children": [
         {
           "path": "/ad/joblist",
-          "title": "View Listing",
+          "title": "İlanları Görüntüle",
           "type": "link"
         },
         {
           "path": "/ad/newjob",
-          "title": "New Listing",
+          "title": "Yeni İlan",
           "type": "link"
         }
       ]
     },
     {
-      "title": "Chat",
+      "title": "Mesaj",
       "icon": "message-circle",
       "type": "sub",
       "active": false,
       "children": [
         {
           "path": "/chat/list",
-          "title": "Chat",
+          "title": "Mesajlarım",
           "type": "link"
         }
       ]
     },
     {
-      "title": "Home",
-      "icon": "message-circle",
+      "title": "Takvim",
+      "icon": "calendar",
       "type": "sub",
       "active": false,
       "children": [
         {
           "path": "/home/homepage",
-          "title": "Chat",
+          "title": "Takvim Detayları",
           "type": "link"
         }
       ]
     },
     {
-      "title": "Other Operations",
+      "title": "Diğer İşlemler",
       "icon": "droplet",
       "type": "sub",
       "active": false,
       "children": [
         {
           "path": "/other/pricing",
-          "title": "Pricing",
+          "title": "Ödeme",
           "type": "link"
         },
         {
           "path": "/other/faq",
-          "title": "FAQ",
+          "title": "SSS",
           "type": "link"
         }
       ]

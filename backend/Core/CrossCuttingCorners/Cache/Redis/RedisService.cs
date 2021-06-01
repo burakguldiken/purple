@@ -16,21 +16,12 @@ namespace Core.CrossCuttingCorners.Cache.Redis
 
         public RedisService()
         {
-            Connect();
+            //_redis = ConnectionHelper.Instance.RedisConnection();
         }
 
         public ConnectionMultiplexer GetConnectionMultiplexer()
         {
             return _redis;
-        }
-
-        /// <summary>
-        /// Connect to redis server
-        /// </summary>
-        public void Connect()
-        {
-            string connString = Connections.Instance._redisConnection;
-            _redis = ConnectionMultiplexer.Connect(connString);
         }
 
         /// <summary>

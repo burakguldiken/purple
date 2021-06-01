@@ -38,7 +38,6 @@
               :key="index"
             >
               <div class="ProfileCard-avatar header-search">
-                <!-- <feather :type="menuItem.icon"></feather> -->
               </div>
               <div class="ProfileCard-details">
                 <div class="ProfileCard-realName">
@@ -53,11 +52,7 @@
               </div>
             </div>
           </div>
-          <div
-            :class="
-              searchResultEmpty ? 'Typeahead-menu is-open' : 'Typeahead-menu'
-            "
-          >
+          <div :class="searchResultEmpty ? 'Typeahead-menu is-open' : 'Typeahead-menu'">
             <div class="tt-dataset tt-dataset-0">
               <div class="EmptyMessage">
                 Your search turned up 0 results. Opps There are no result found.
@@ -81,7 +76,10 @@
         ></feather>
       </div>
     </div>
-    <div class="left-header col horizontal-wrapper pl-0">
+    <div class="left-header col-4 text-center col horizontal-wrapper pl-0">
+      <router-link to="/">
+          <img class="img-fluid" src="../assets/images/logo/logo.png" alt />
+      </router-link>
     </div>
     <div class="nav-right col-8 pull-right right-header p-0">
       <ul class="nav-menus">
@@ -141,11 +139,7 @@
         </li>
         <li class="profile-nav onhover-dropdown p-0 mr-0">
           <div class="media profile-media">
-            <img 
-              class="b-r-10"
-              src="../assets/images/dashboard/profile.jpg"
-              alt=""
-            />
+            <img class="img-30 rounded-circle" :src='"../assets/images/dashboard/myimage.jpeg"' alt="#">
             <div class="media-body">
               <span>Burak Güldiken</span>
               <p class="mb-0 font-roboto">

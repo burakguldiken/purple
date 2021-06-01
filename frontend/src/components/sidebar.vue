@@ -1,67 +1,20 @@
 <template>
   <div>
-      <div class="logo-wrapper">
-        <router-link to="/">
-          <img
-            width="50%"
-            class="img-fluid for-light"
-            src="../assets/images/logo/homepagelogo.png"
-            alt="" /><img
-            width="50%"
-            class="img-fluid for-dark"
-            src="../assets/images/logo/homepagelogo.png"
-            alt=""
-        />
-        </router-link>
-        <div class="back-btn"  @click="toggle_sidebar"><i class="fa fa-angle-left"></i></div>
-        <div class="toggle-sidebar" @click="toggle_sidebar">
-            <feather class="status_toggle middle" type="grid" id="sidebar-toggle"></feather>
-        </div>
-      </div>
-      <div class="logo-icon-wrapper">
-        <router-link to="/">
-          <img
-            class="img-fluid"
-            src="../assets/images/logo/logo-icon.png"
-            alt=""
-        /></router-link>
-      </div>
       <nav class="sidebar-main">
-        <li
-          class="left-arrow"
-          :class="{'d-none': layout.settings.layout_type =='rtl'? hideLeftArrowRTL: hideLeftArrow }"
-          @click="(layout.settings.sidebar.type === 'horizontal_sidebar' && layout.settings.layout_type==='rtl') ? scrollToLeftRTL() : scrollToLeft()"
-        >
-          <feather type="arrow-left"></feather>
-        </li>
-        <div id="sidebar-menu">
-          <ul class="sidebar-links custom-scrollbar" id="myDIV"
+        <div id="sidebar-menu" style="margin-top:50px">
+          <ul class="sidebar-links custom-scrollbar" id="myDIV" style="width:50%;float:right;"
           :style="[layout.settings.sidebar.type == 'horizontal_sidebar' ? layout.settings.layout_type=='rtl'? {'margin-right': margin+'px'} : {'margin-left': margin+'px'} :  { margin : '0px'}]"
           >
-            <li class="back-btn">
-              <router-link to="/">
-                <img
-                  class="img-fluid"
-                  src="../assets/images/logo/logo-icon.png"
-                  alt=""
-              /></router-link>
-              <div class="mobile-back text-right">
-                <span>Back</span
-                ><i class="fa fa-angle-right pl-2" aria-hidden="true"></i>
-              </div>
-            </li>
            <li
                 v-for="(menuItem, index) in menuItems"
                 :key="index"
                 :class="{'active': menuItem.active, 'sidebar-main-title' : menuItem.type == 'headtitle'}"
                 class="sidebar-list"
               >
-                <!-- link title -->
                 <div v-if="menuItem.type == 'headtitle'">
                   <h6 class="lan-1">{{ menuItem.headTitle1 }}</h6>
                   <p class="lan-2">{{ menuItem.headTitle2 }}</p>
                 </div>
-                <!-- Sub -->
                 <label
                       :class="'badge badge-'+menuItem.badgeType"
                       v-if="menuItem.badgeType"
@@ -73,14 +26,13 @@
                   @click="setNavActive(menuItem, index)"
                 >
                   <feather :type="menuItem.icon" class="top"></feather>
-                  <span>
+                  <span class="f-w-600">
                     {{ menuItem.title }}
                   </span>
                   <div class="according-menu" v-if="menuItem.children">
                     <i class="fa fa-angle-right pull-right" ></i>
                   </div>
                 </a>
-                <!-- Link -->
                 <router-link
                   :to="menuItem.path"
                   class="sidebar-link sidebar-title"
@@ -93,7 +45,6 @@
                   </span>
                   <i class="fa fa-angle-right pull-right" v-if="menuItem.children"></i>
                 </router-link>
-                <!-- External Link -->
                 <a
                   :href="menuItem.path"
                   class="sidebar-link sidebar-title"
@@ -106,7 +57,6 @@
                   </span>
                   <i class="fa fa-angle-right pull-right" v-if="menuItem.children"></i>
                 </a>
-                <!-- External Tab Link -->
                 <a
                   :href="menuItem.path"
                   target="_blank"
@@ -120,14 +70,12 @@
                   </span>
                   <i class="fa fa-angle-right pull-right" v-if="menuItem.children"></i>
                 </a>
-                <!-- 2nd Level Menu -->
                 <ul class="sidebar-submenu" v-if="menuItem.children" :class="{ 'menu-open': menuItem.active }">
                   <li
                     v-for="(childrenItem, index) in menuItem.children"
                     :key="index"
                     :class="{'active': childrenItem.active}"
                   >
-                    <!-- Sub -->
                     <a
                       class="submenu-title"
                       href="javascript:void(0)"
@@ -141,7 +89,6 @@
                       >{{childrenItem.badgeValue}}</label>
                       <i class="fa fa-angle-right pull-right mt-1" v-if="childrenItem.children"></i>
                     </a>
-                    <!-- Link -->
                     <router-link
                       class="submenu-title"
                       :to="childrenItem.path"
@@ -155,7 +102,6 @@
                       >{{ childrenItem.badgeValue }}</label>
                       <i class="fa fa-angle-right pull-right mt-1" v-if="childrenItem.children"></i>
                     </router-link>
-                    <!-- External Link -->
                     <a :href="childrenItem.path" v-if="childrenItem.type == 'extLink'" class="submenu-title">
                       {{ childrenItem.title }}
                       <label
@@ -164,7 +110,6 @@
                       >{{ childrenItem.badgeValue }}</label>
                       <i class="fa fa-angle-right pull-right mt-1" v-if="childrenItem.children"></i>
                     </a>
-                    <!-- External Tab Link -->
                     <a
                     class="submenu-title"
                       :href="childrenItem.path"
@@ -178,10 +123,8 @@
                       >{{ childrenItem.badgeValue }}</label>
                       <i class="fa fa-angle-right pull-right mt-1" v-if="childrenItem.children"></i>
                     </a>
-                    <!-- 3rd Level Menu -->
                     <ul class="nav-sub-childmenu submenu-content" v-if="childrenItem.children" :class="{ 'opensubchild': childrenItem.active }">
                       <li v-for="(childrenSubItem, index) in childrenItem.children" :key="index">
-                        <!-- Link -->
                         <router-link
                           :to="childrenSubItem.path"
                           v-if="childrenSubItem.type == 'link'"
@@ -194,7 +137,6 @@
                           >{{ childrenSubItem.badgeValue }}</label>
                           <i class="fa fa-angle-right pull-right" v-if="childrenSubItem.children"></i>
                         </router-link>
-                        <!-- External Link -->
                         <router-link
                           :to="childrenSubItem.path"
                           v-if="childrenSubItem.type == 'extLink'"
@@ -207,7 +149,6 @@
                           >{{ childrenSubItem.badgeValue }}</label>
                           <i class="fa fa-angle-right pull-right" v-if="childrenSubItem.children"></i>
                         </router-link>
-                        <!-- External Tab Link -->
                         <router-link
                           :to="childrenSubItem.path"
                           v-if="childrenSubItem.type == 'extLink'"
@@ -225,6 +166,9 @@
                   </li>
                 </ul>
               </li>
+              <div class="mt-4 m-r-10 m-l-40" style="border-top:1px solid #dce1e1">
+                <p class="txt-dark mt-3">Purple © 2021</p>
+              </div>
           </ul>
         </div>
         <li

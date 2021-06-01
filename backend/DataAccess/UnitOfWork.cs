@@ -1,4 +1,5 @@
 ﻿using Core.Utilities.Connection;
+using Core.Utilities.Environment;
 using DataAccess.IRepositories;
 using DataAccess.Repositories;
 using MySql.Data.MySqlClient;
@@ -20,8 +21,7 @@ namespace DataAccess
         {
             try
             {
-                Connections connectionInfo = Connections.Instance;
-                _connection = new MySqlConnection(connectionInfo._connString);
+                _connection = ConnectionHelper.Instance.MySqlConnection();
                 _connection.Open();
                 _transaction = _connection.BeginTransaction();
             }
