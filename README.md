@@ -10,6 +10,11 @@ Purple kullanıcıların ilan yayınlayıp iş arayış süreçlerini yönetmeyi
 
 <br>
 
+## Geliştirilmekte Olan Kısımlar
+
+Real-time mesaj sistemi,İş süreçlerinin yönetilmesi için Kanban Board ve Canlı destek hattı
+
+
 ## Kullanılan Teknolojiler
 
 - .Net Core
