@@ -11,7 +11,7 @@ Purple freelance veya tam zamanlı bir iş arama platformudur.Bu platformda ilan
 <img title="" src="./images/purpletwo.png" alt="purpletwo.png" data-align="inline" width="400"> <img title="" src="./images/purplethree.png" alt="purplethree.png" width="400">
 <img title="" src="./images/newad.png" alt="newad.png" data-align="inline" width="400"> <img title="" src="./images/pay.png" alt="pay.png" width="400">
 <img title="" src="./images/profile.png" alt="profile.png" data-align="inline" width="400"><img title="" src="./images/addetail.png" alt="addetail.png" data-align="inline" width="400"> 
-<img title="" src="./images/message.png" alt="message.png" width="400"><img title="" src="./images/ad.png" alt="ad.png" width="400">
+<img title="" src="./images/message.png" alt="message.png" width="400"><img title="" src="./images/ad.png" alt="ad.png" width="400"><img title="" src="./images/adlist.png" alt="adlist.png" width="400">
 
 <br>
 
