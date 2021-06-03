@@ -5,7 +5,8 @@ Purple freelance veya tam zamanlı bir iş arama platformudur.Bu platformda ilan
 <br><br>
 
 <img title="" src="./images/homeone.png" alt="homeone.png" data-align="inline" width="400"> <img title="" src="./images/hometwo.png" alt="hometwo.png" width="400">
-
+<img title="" src="./images/homethree.png" alt="homethree.png" data-align="inline" width="400"> <img title="" src="./images/homefour.png" alt="homefour.png" width="400">
+<img title="" src="./images/homefive.png" alt="homefive.png" data-align="inline" width="400"> <img title="" src="./images/login.png" alt="login.png" width="400">
 
 <br>
 
