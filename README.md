@@ -8,14 +8,12 @@ Purple freelance veya tam zamanlı bir iş arama platformudur.Bu platformda ilan
 <img title="" src="./images/homethree.png" alt="homethree.png" data-align="inline" width="400"> <img title="" src="./images/homefour.png" alt="homefour.png" width="400">
 <img title="" src="./images/homefive.png" alt="homefive.png" data-align="inline" width="400"> <img title="" src="./images/login.png" alt="login.png" width="400">
 <img title="" src="./images/register.png" alt="register.png" data-align="inline" width="400"> <img title="" src="./images/purpleone.png" alt="purpleone.png" width="400">
-<img title="" src="./images/purpletwo.png" alt="purpletwo.png" data-align="inline" width="400"> <img title="" src="./images/purplethree.png" alt="purplethree.png" width="400">
+<img title="" src="./images/ad.png" alt="ad.png" data-align="inline" width="400"> <img title="" src="./images/purplethree.png" alt="purplethree.png" width="400">
 <img title="" src="./images/newad.png" alt="newad.png" data-align="inline" width="400"> <img title="" src="./images/pay.png" alt="pay.png" width="400">
 <img title="" src="./images/profile.png" alt="profile.png" data-align="inline" width="400"><img title="" src="./images/addetail.png" alt="addetail.png" data-align="inline" width="400"> 
 <img title="" src="./images/message.png" alt="message.png" width="400"><img title="" src="./images/ad.png" alt="ad.png" width="400">
 
 <br>
-
-<img title="" src="./images/ad.png" alt="ad.png" width="400">
 
 ## Purple Nasıl Çalışır ?
 
