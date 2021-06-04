@@ -1,10 +1,7 @@
 ﻿using Core.Utilities.Connection;
-using Core.Utilities.Environment;
 using DataAccess.IRepositories;
 using DataAccess.Repositories;
-using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Text;
 

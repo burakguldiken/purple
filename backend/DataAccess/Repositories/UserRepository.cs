@@ -1,4 +1,4 @@
-﻿using Core.Context.Dapper;
+﻿using Core.Contexts.Dapper;
 using DataAccess.IRepositories;
 using Entities.Models;
 using System;
@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DataAccess.Repositories
 {
-    public class UserRepository : BaseRepository<User>,IUserRepository
+    public class UserRepository : DbContext<User>, IUserRepository
     {
         public UserRepository(IDbTransaction dbTransaction) : base(dbTransaction)
         {
@@ -18,7 +18,7 @@ namespace DataAccess.Repositories
         public User GetUserByEmail(string email)
         {
             string sql = @"SELECT * FROM User WHERE Email = @email AND StatusId = 2";
-            return _connection.ExecuteCommand<User>(sql, email).FirstOrDefault();
+            return ExecuteCommand<User>(sql, email).FirstOrDefault();
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using Core.Context.Dapper;
-using Core.CrossCuttingCorners.Cache.Redis;
-using Core.CrossCuttingCorners.FileServer;
-using Core.CrossCuttingCorners.Queue.RabbitMq;
-using Core.Utilities.Security.Jwt;
+﻿using Core.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -12,13 +8,14 @@ namespace Core.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddCoreDependencies(this IServiceCollection services)
+        public static IServiceCollection AddDependencyResolvers(this IServiceCollection serviceCollection,ICoreModule[] modules)
         {
-            services.AddScoped(typeof(IDbContext), typeof(DbContext));
-            services.AddScoped<ITokenHelper, JwtHelper>();
-            services.AddScoped<IRedisService, RedisService>();
-            services.AddScoped<IRabbitMqService, RabbitMqService>();
-            services.AddScoped<IMinioService, MinioService>();
+            foreach (var module in modules)
+            {
+                module.Load(serviceCollection);
+            }
+
+            return ServiceTool.Create(serviceCollection);
         }
     }
 }

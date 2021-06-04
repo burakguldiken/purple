@@ -18,12 +18,12 @@ using System.Linq;
 
 namespace Business.Services
 {
-    public class AuthService : BaseService,IAuthService
+    public class AuthService : BaseService, IAuthService
     {
         private ITokenHelper _tokenHelper;
 
-        public AuthService(IUnitOfWork _unitOfWork,IMapper _mapper,ITokenHelper tokenHelper) 
-            : base(_unitOfWork,_mapper)
+        public AuthService(IUnitOfWork _unitOfWork, IMapper _mapper, ITokenHelper tokenHelper)
+            : base(_unitOfWork, _mapper)
         {
             _tokenHelper = tokenHelper;
         }
@@ -55,8 +55,7 @@ namespace Business.Services
         /// <summary>
         /// User register operation
         /// </summary>
-        /// <param name="userForRegisterDto"></param>
-        /// <param name="password"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
         public IDataResult<User> Register(UserRegisterRequestDto request)
         {
@@ -76,10 +75,10 @@ namespace Business.Services
                 StatusId = (int)EnumStatus.Active
             };
 
-             if(_unitOfWork.UserRepository.Insert(user) <= 0)
-             {
+            if (_unitOfWork.UserRepository.Insert(user) <= 0)
+            {
                 return new ErrorDataResult<User>(ErrorMessages.RegisterError);
-             }
+            }
 
             return new SuccessDataResult<User>(user, SuccessMessages.UserRegistered);
         }
@@ -91,7 +90,7 @@ namespace Business.Services
         /// <returns></returns>
         public IDataResult<AccessToken> CreateAccessToken(User user)
         {
-            if(user is null)
+            if (user is null)
             {
                 return new ErrorDataResult<AccessToken>(ErrorMessages.TokenCreateError);
             }
@@ -123,13 +122,13 @@ namespace Business.Services
         public IDataResult<List<UserListResponseDto>> GetUsers(long userId)
         {
             var currentUser = _unitOfWork.UserRepository.GetById(userId);
-            
-            if(currentUser is null)
+
+            if (currentUser is null)
             {
                 return new ErrorDataResult<List<UserListResponseDto>>(ErrorMessages.UserNotFound);
             }
 
-            if(currentUser.UserRole != (int)EnumUserRole.Admin)
+            if (currentUser.UserRole != (int)EnumUserRole.Admin)
             {
                 return new ErrorDataResult<List<UserListResponseDto>>(ErrorMessages.Unauthorized);
             }

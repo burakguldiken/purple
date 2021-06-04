@@ -1,4 +1,4 @@
-﻿using Core.Context.Dapper;
+﻿using Core.Contexts.Dapper;
 using Entities.Models;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.IRepositories
 {
-    public interface IUserRepository : IBaseRepository<User>
+    public interface IUserRepository : IDbContext<User>
     {
         /// <summary>
         /// Get user by email address

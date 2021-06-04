@@ -1,71 +1,64 @@
-﻿using Entities.Models;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using Z.Dapper.Plus;
+using System.Threading.Tasks;
 
-namespace Core.Context.Dapper
+namespace Core.Contexts.Dapper
 {
-    public interface IDbContext
+    public interface IDbContext<T> where T : BaseEntity, new()
     {
         /// <summary>
         /// Insert operation
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        long Insert<T>(T item) where T : class, new();
+        long Insert(T item);
         /// <summary>
         /// Get item by id
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="id"></param>
         /// <returns></returns>
-        T GetById<T>(long id) where T : class, new();
+        T GetById(long id);
         /// <summary>
         /// Get all rows for current class
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        IEnumerable<T> GetAll<T>() where T : BaseEntity, new();
+        IEnumerable<T> GetAll();
         /// <summary>
         /// Update current item
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
         /// <returns></returns>
-        bool Update<T>(T item) where T : class, new();
+        bool Update(T item);
         /// <summary>
         /// Delete current item
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
         /// <returns></returns>
-        bool Delete<T>(T item) where T : BaseEntity, new();
+        bool Delete(T item);
         /// <summary>
         /// Bulk insert operation
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="items"></param>
         /// <returns></returns>
-        bool BulkInsert<T>(IEnumerable<T> items) where T : class, new();
+        bool BulkInsert(IEnumerable<T> items);
         /// <summary>
         /// Bulk update operation
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="items"></param>
         /// <returns></returns>
-        bool BulkUpdate<T>(IEnumerable<T> items) where T : class, new();
+        bool BulkUpdate(IEnumerable<T> items);
         /// <summary>
         /// Bulk delete operation
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="items"></param>
         /// <returns></returns>
-        bool BulkDelete<T>(IEnumerable<T> items) where T : class, new();
+        bool BulkDelete(IEnumerable<T> items);
         /// <summary>
         /// Query execute by parameters
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="sql"></param>
         /// <param name="args"></param>
         /// <returns></returns>
@@ -73,7 +66,6 @@ namespace Core.Context.Dapper
         /// <summary>
         /// Query execute by none parameter
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="sql"></param>
         /// <returns></returns>
         IEnumerable<T> ExecuteCommand<T>(string sql);

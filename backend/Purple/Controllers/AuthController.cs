@@ -50,6 +50,8 @@ namespace Purple.Controllers
                 return BadRequest(result.Message);
             }
 
+            _unitOfWork.Commit();
+
             return Ok(result.Data);
         }
 
@@ -88,7 +90,6 @@ namespace Purple.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("getusers")]
-        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
         public IActionResult GetUsers()
         {
             var users  = _authService.GetUsers(GetUserId());

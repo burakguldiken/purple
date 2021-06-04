@@ -13,7 +13,7 @@ namespace Purple.Controllers
     [ApiController]
     public class BaseController : Controller
     {
-        public readonly IUnitOfWork _unitOfWork;
+        public IUnitOfWork _unitOfWork;
 
         public BaseController(IUnitOfWork unitOfWork)
         {

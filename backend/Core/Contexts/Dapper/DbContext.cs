@@ -1,7 +1,7 @@
 ﻿using Business.Enums;
+using Core.Entities;
 using Dapper;
 using Dapper.Contrib.Extensions;
-using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,19 +9,21 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using Z.Dapper.Plus;
 
-namespace Core.Context.Dapper
+namespace Core.Contexts.Dapper
 {
-    public class DbContext : IDbContext
+    public class DbContext<T> : IDbContext<T> where T : BaseEntity, new()
     {
-        protected IDbTransaction _transaction;
-        protected IDbConnection _connection 
-        { 
-            get 
-            { 
-                return _transaction.Connection; 
-            } 
+        readonly IDbTransaction _transaction;
+
+        protected IDbConnection _connection
+        {
+            get
+            {
+                return _transaction.Connection;
+            }
         }
 
         public DbContext(IDbTransaction transaction)
@@ -29,7 +31,7 @@ namespace Core.Context.Dapper
             _transaction = transaction;
         }
 
-        public IEnumerable<T> GetAll<T>() where T : BaseEntity, new()
+        public IEnumerable<T> GetAll()
         {
             try
             {
@@ -42,7 +44,7 @@ namespace Core.Context.Dapper
             return default;
         }
 
-        public T GetById<T>(long id) where T : class, new()
+        public T GetById(long id)
         {
             try
             {
@@ -55,7 +57,7 @@ namespace Core.Context.Dapper
             return default;
         }
 
-        public bool Update<T>(T item) where T : class, new()
+        public bool Update(T item)
         {
             try
             {
@@ -68,7 +70,7 @@ namespace Core.Context.Dapper
             return default;
         }
 
-        public bool Delete<T>(T item) where T : BaseEntity, new()
+        public bool Delete(T item)
         {
             try
             {
@@ -83,7 +85,7 @@ namespace Core.Context.Dapper
         }
 
 
-        public long Insert<T>(T item) where T : class, new()
+        public long Insert(T item)
         {
             try
             {
@@ -109,7 +111,7 @@ namespace Core.Context.Dapper
             return default;
         }
 
-        public bool BulkInsert<T>(IEnumerable<T> items) where T : class, new()
+        public bool BulkInsert(IEnumerable<T> items)
         {
             try
             {
@@ -122,7 +124,7 @@ namespace Core.Context.Dapper
             return false;
         }
 
-        public bool BulkUpdate<T>(IEnumerable<T> items) where T : class, new()
+        public bool BulkUpdate(IEnumerable<T> items)
         {
             try
             {
@@ -136,7 +138,7 @@ namespace Core.Context.Dapper
             return false;
         }
 
-        public bool BulkDelete<T>(IEnumerable<T> items) where T : class, new()
+        public bool BulkDelete(IEnumerable<T> items)
         {
             try
             {
