@@ -40,7 +40,12 @@ Real-time mesaj sistemi,İş süreçlerinin yönetilmesi için Kanban Board ve C
 - RabbitMQ
   
 - MinIO
+
+- Html
+
+- Css
   
-- Jenkins
-  
-- Octopus
+- CI/CD süreçlerinin yöntimi Jenkins ve Octopus ile gerçekleştirildi.
+
+- Kod kalite kontrolü için Sonarqube tool'u kullanıldı.
+
