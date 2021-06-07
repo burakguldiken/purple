@@ -14,7 +14,7 @@ namespace Core.Utilities.Security.Jwt
 {
     public class JwtHelper : ITokenHelper
     {
-        private TokenOptions _tokenOptions;
+        private readonly TokenOptions _tokenOptions;
         private DateTime _accessTokenExpiration;
 
         public JwtHelper()
@@ -53,7 +53,7 @@ namespace Core.Utilities.Security.Jwt
             return jwt;
         }
 
-        private IEnumerable<Claim> SetClaims(User user)
+        private static IEnumerable<Claim> SetClaims(User user)
         {
             var claims = new List<Claim>();
             claims.AddNameIdentifier(user.Id.ToString());

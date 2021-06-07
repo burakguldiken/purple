@@ -12,11 +12,11 @@ namespace Core.CrossCuttingCorners.Cache.Redis
 {
     public class RedisService : IRedisService
     {
-        private ConnectionMultiplexer _redis;
+        private readonly ConnectionMultiplexer _redis;
 
         public RedisService()
         {
-            //_redis = ConnectionHelper.Instance.RedisConnection();
+            _redis = ConnectionHelper.RedisConnection();
         }
 
         public ConnectionMultiplexer GetConnectionMultiplexer()

@@ -98,7 +98,7 @@ namespace Core.Contexts.Dapper
             return default;
         }
 
-        public IEnumerable<T> ExecuteCommand<T>(string sql, params object[] args)
+        public IEnumerable<T> ExecuteCommand(string sql, params object[] args)
         {
             try
             {
@@ -111,11 +111,24 @@ namespace Core.Contexts.Dapper
             return default;
         }
 
+        public IEnumerable<T> ExecuteCommand(string sql)
+        {
+            try
+            {
+                return _connection.Query<T>(sql);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return default;
+        }
+
         public bool BulkInsert(IEnumerable<T> items)
         {
             try
             {
-                return _connection.BulkInsert(items).Current.Any() ? true : false;
+                return _connection.BulkInsert(items).Current.Any();
             }
             catch (Exception ex)
             {
@@ -150,19 +163,6 @@ namespace Core.Contexts.Dapper
                 Console.WriteLine(ex.Message);
             }
             return false;
-        }
-
-        public IEnumerable<T> ExecuteCommand<T>(string sql)
-        {
-            try
-            {
-                return _connection.Query<T>(sql);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return default;
         }
 
         public MethodInfo GetMethodName()

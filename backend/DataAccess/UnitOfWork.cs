@@ -18,7 +18,7 @@ namespace DataAccess
         {
             try
             {
-                _connection = ConnectionHelper.Instance.MySqlConnection();
+                _connection = ConnectionHelper.MySqlConnection();
                 _connection.Open();
                 _transaction = _connection.BeginTransaction();
             }

@@ -20,7 +20,7 @@ namespace Business.Services
 {
     public class AuthService : BaseService, IAuthService
     {
-        private ITokenHelper _tokenHelper;
+        private readonly ITokenHelper _tokenHelper;
 
         public AuthService(IUnitOfWork _unitOfWork, IMapper _mapper, ITokenHelper tokenHelper)
             : base(_unitOfWork, _mapper)
@@ -31,22 +31,22 @@ namespace Business.Services
         /// <summary>
         /// User login operation
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="userForLoginDto"></param>
         /// <returns></returns>
-        public IDataResult<User> Login(UserLoginRequestDto request)
+        public IDataResult<User> Login(UserLoginRequestDto userForLoginDto)
         {
-            ValidationTool.Validate(new LoginValidation(), request);
+            ValidationTool.Validate(new LoginValidation(), userForLoginDto);
 
-            var userToCheck = _unitOfWork.UserRepository.GetUserByEmail(request.Email);
+            var userToCheck = _unitOfWork.UserRepository.GetUserByEmail(userForLoginDto.Email);
 
             if (userToCheck == null)
             {
                 return new ErrorDataResult<User>(ErrorMessages.UserNotFound);
             }
 
-            if (!HashingHelper.VerifyPasswordHash(request.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
-                return new ErrorDataResult<User>(ErrorMessages.PasswordError);
+                return new ErrorDataResult<User>(ErrorMessages.PassError);
             }
 
             return new SuccessDataResult<User>(userToCheck, SuccessMessages.SuccessfulLogin);
@@ -55,21 +55,21 @@ namespace Business.Services
         /// <summary>
         /// User register operation
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="userForRegisterDto"></param>
         /// <returns></returns>
-        public IDataResult<User> Register(UserRegisterRequestDto request)
+        public IDataResult<User> Register(UserRegisterRequestDto userForRegisterDto)
         {
-            ValidationTool.Validate(new RegisterValidation(), request);
+            ValidationTool.Validate(new RegisterValidation(), userForRegisterDto);
 
             byte[] passwordHash, passwordSalt;
 
-            HashingHelper.CreatePasswordHash(request.Password, out passwordHash, out passwordSalt);
+            HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out passwordHash, out passwordSalt);
 
             var user = new User
             {
-                Email = request.Email,
-                FirstName = request.FirstName,
-                Surname = request.Surname,
+                Email = userForRegisterDto.Email,
+                FirstName = userForRegisterDto.FirstName,
+                Surname = userForRegisterDto.Surname,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
                 StatusId = (int)EnumStatus.Active

@@ -12,13 +12,13 @@ namespace Core.Utilities.Connection
 {
     public class ConnectionHelper
     {
-        private static IConfiguration configuration = null;
+        private IConfiguration _configuration = null;
         private static volatile ConnectionHelper _connection = null;
 
         public ConnectionHelper()
         {
             EnvironmentManager environmentManager = EnvironmentManager.Instance;
-            configuration = environmentManager.GetConfiguration();
+            _configuration = environmentManager.GetConfiguration();
         }
 
         /// <summary>
@@ -38,9 +38,9 @@ namespace Core.Utilities.Connection
         /// Create a new mysql connection
         /// </summary>
         /// <returns></returns>
-        public IDbConnection MySqlConnection()
+        public static IDbConnection MySqlConnection()
         {
-            MySqlConnection mysqlConn = new((string)configuration.GetValue(typeof(string), "ConnString"));
+            MySqlConnection mysqlConn = new((string)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(string), "ConnString"));
             return mysqlConn;
         }
 
@@ -48,14 +48,14 @@ namespace Core.Utilities.Connection
         /// Create rabbitmq connection
         /// </summary>
         /// <returns></returns>
-        public IConnection RabbitMqConnection()
+        public static IConnection RabbitMqConnection()
         {
             ConnectionFactory rabbitMqConnection = new()
             {
-                HostName = (string)configuration.GetValue(typeof(string), "RabbitMqHost"),
-                Port = (int)configuration.GetValue(typeof(int), "RabbitMqPort"),
-                UserName = (string)configuration.GetValue(typeof(string), "RabbitMqUsername"),
-                Password = (string)configuration.GetValue(typeof(string), "RabbitMqPassword")
+                HostName = (string)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(string), "RabbitMqHost"),
+                Port = (int)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(int), "RabbitMqPort"),
+                UserName = (string)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(string), "RabbitMqUsername"),
+                Password = (string)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(string), "RabbitMqPassword")
             };
 
             return rabbitMqConnection.CreateConnection();
@@ -65,9 +65,9 @@ namespace Core.Utilities.Connection
         /// Create redis connection
         /// </summary>
         /// <returns></returns>
-        public ConnectionMultiplexer RedisConnection()
+        public static ConnectionMultiplexer RedisConnection()
         {
-            string redisConn = (string)configuration.GetValue(typeof(string), "RedisConnString");
+            string redisConn = (string)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(string), "RedisConnString");
             return ConnectionMultiplexer.Connect(redisConn);
         }
 
@@ -75,12 +75,12 @@ namespace Core.Utilities.Connection
         /// Create minio connection
         /// </summary>
         /// <returns></returns>
-        public MinioClient MinioConnection()
+        public static MinioClient MinioConnection()
         {
             MinioClient minioClient = new(
-                (string)configuration.GetValue(typeof(string), "MinioIp"),
-                (string)configuration.GetValue(typeof(string), "MinioSecretKey"),
-                (string)configuration.GetValue(typeof(string), "MinioAccessKey")
+                (string)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(string), "MinioIp"),
+                (string)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(string), "MinioSecretKey"),
+                (string)EnvironmentManager.Instance.GetConfiguration().GetValue(typeof(string), "MinioAccessKey")
             );
 
             return minioClient;

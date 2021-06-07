@@ -18,7 +18,7 @@ namespace DataAccess.Repositories
         public User GetUserByEmail(string email)
         {
             string sql = @"SELECT * FROM User WHERE Email = @email AND StatusId = 2";
-            return ExecuteCommand<User>(sql, email).FirstOrDefault();
+            return ExecuteCommand(sql, email).FirstOrDefault();
         }
     }
 }

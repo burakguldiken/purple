@@ -12,11 +12,11 @@ namespace Core.CrossCuttingCorners.FileServer
 {
     public class MinioService : IMinioService
     {
-        MinioClient _minioClient;
+        private readonly MinioClient _minioClient;
 
         public MinioService()
         {
-            //_minioClient = ConnectionHelper.Instance.MinioConnection();
+            _minioClient = ConnectionHelper.MinioConnection();
         }
 
         /// <summary>

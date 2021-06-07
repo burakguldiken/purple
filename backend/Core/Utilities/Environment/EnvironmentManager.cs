@@ -13,7 +13,7 @@ namespace Core.Utilities.Environment
         private static object lockObject = new object();
 
         private string _environmentName = "";
-        private string _environmentVariableKey = "PURPLE_ENVIRONMENT";
+        private readonly string _environmentVariableKey = "PURPLE_ENVIRONMENT";
 
         public bool IsDevelopment() => _environmentName == "Development" ? true : false;
         public bool IsProduction() => _environmentName == "Production" ? true : false;
@@ -53,7 +53,7 @@ namespace Core.Utilities.Environment
                 }
                 catch (Exception)
                 {
-                    throw new Exception($"{_environmentVariableKey} değeri null");
+                    throw new ArgumentNullException($"{_environmentVariableKey} değeri null");
                 }
             }
             return _environmentName;

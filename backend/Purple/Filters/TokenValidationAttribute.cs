@@ -11,13 +11,25 @@ using System.Threading.Tasks;
 
 namespace Purple.Filters
 {
-    public class TokenValidationFilter : Attribute, IActionFilter
+    /// <summary>
+    /// Jwt token verify attiribute
+    /// </summary>
+    public class TokenValidationAttribute : Attribute, IActionFilter
     {
+        /// <summary>
+        /// Finish method
+        /// </summary>
+        /// <param name="context"></param>
         public void OnActionExecuted(ActionExecutedContext context)
         {
+            Console.WriteLine(SuccessMessages.TokenVerify);
         }
 
-        public void OnActionExecuting(ActionExecutingContext context)
+        /// <summary>
+        /// Start method
+        /// </summary>
+        /// <param name="context"></param>
+        public async void OnActionExecuting(ActionExecutingContext context)
         {
             AllowAnonymousFilter allowAnonymousFilter = (AllowAnonymousFilter)context.Filters.FirstOrDefault(x => x.GetType() == typeof(AllowAnonymousFilter));
 
@@ -25,8 +37,6 @@ namespace Purple.Filters
             {
                 return;
             }
-
-            string apiPath = context.HttpContext.Request.Path;
 
             StringValues bearer = new StringValues();
 
@@ -36,13 +46,13 @@ namespace Purple.Filters
                 context.HttpContext.Request.Headers.TryGetValue("Authorization", out bearer);
                 if (userId <= 0 || bearer.ToString().Split(' ')[1] == null)
                 {
-                    UnAuthorized(context);
+                    await UnAuthorized(context);
                     return;
                 }
             }
             catch (Exception)
             {
-                UnAuthorized(context);
+                await UnAuthorized(context);
                 return;
             }
 
@@ -52,13 +62,12 @@ namespace Purple.Filters
 
                 if (bearer == "{}" || String.IsNullOrEmpty(bearer))
                 {
-                    UnAuthorized(context);
-                    return;
+                    await UnAuthorized(context);
                 }
             }
         }
 
-        public async void UnAuthorized(ActionExecutingContext context)
+        public async Task UnAuthorized(ActionExecutingContext context)
         {
             ErrorResult errorResult = new ErrorResult();
             errorResult.Message = ErrorMessages.Unauthorized;

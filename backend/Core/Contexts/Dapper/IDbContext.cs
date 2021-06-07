@@ -62,12 +62,12 @@ namespace Core.Contexts.Dapper
         /// <param name="sql"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        IEnumerable<T> ExecuteCommand<T>(string sql, params object[] args);
+        IEnumerable<T> ExecuteCommand(string sql, params object[] args);
         /// <summary>
         /// Query execute by none parameter
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        IEnumerable<T> ExecuteCommand<T>(string sql);
+        IEnumerable<T> ExecuteCommand(string sql);
     }
 }

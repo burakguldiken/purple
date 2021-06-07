@@ -6,9 +6,10 @@ namespace Business.Constant.Messages
 {
     public static class SuccessMessages
     {
-        public static string AccessTokenCreated = "Token Başarıyla Oluşturuldu";
+        public static readonly string AccessTokenCreated = "Token Başarıyla Oluşturuldu";
 
-        public static string SuccessfulLogin = "Giriş İşlemi Başarılı";
-        public static string UserRegistered = "Kayıt İşlemi Başarılı";
+        public static readonly string SuccessfulLogin = "Giriş İşlemi Başarılı";
+        public static readonly string UserRegistered = "Kayıt İşlemi Başarılı";
+        public static readonly string TokenVerify = "Token Doğrulandı";
     }
 }

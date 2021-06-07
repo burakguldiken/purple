@@ -12,11 +12,11 @@ namespace Core.CrossCuttingCorners.Queue.RabbitMq
 {
     public class RabbitMqService : IRabbitMqService
     {
-        IConnection _context;
+        private readonly IConnection _context;
 
         public RabbitMqService()
         {
-            //_context = ConnectionHelper.Instance.RabbitMqConnection();
+            _context = ConnectionHelper.RabbitMqConnection();
         }
 
         /// <summary>

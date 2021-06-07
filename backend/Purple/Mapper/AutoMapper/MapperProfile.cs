@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Purple.Utilities.Mapper.AutoMapper
 {
+    /// <summary>
+    /// Basic map operations
+    /// </summary>
     public class MapperProfile : Profile
     {
         public MapperProfile()

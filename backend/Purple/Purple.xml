@@ -24,5 +24,27 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Purple.Filters.TokenValidationAttribute">
+            <summary>
+            Jwt token verify attiribute
+            </summary>
+        </member>
+        <member name="M:Purple.Filters.TokenValidationAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Finish method
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Purple.Filters.TokenValidationAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Start method
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Purple.Utilities.Mapper.AutoMapper.MapperProfile">
+            <summary>
+            Basic map operations
+            </summary>
+        </member>
     </members>
 </doc>

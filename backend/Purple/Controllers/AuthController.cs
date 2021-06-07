@@ -16,10 +16,11 @@ namespace Purple.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [TypeFilter(typeof(TokenValidationFilter))]
+    [TypeFilter(typeof(TokenValidationAttribute))]
+    
     public class AuthController : BaseController
     {
-        IAuthService _authService;
+        private readonly IAuthService _authService;
 
         public AuthController(IUnitOfWork _unitOfWork, IAuthService authService) 
             : base(_unitOfWork)

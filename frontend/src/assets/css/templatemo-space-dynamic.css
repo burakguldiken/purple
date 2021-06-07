@@ -461,7 +461,6 @@ header
 
 .header-area .main-nav .menu-trigger {
   cursor: pointer;
-  display: block;
   position: absolute;
   top: 33px;
   width: 32px;
@@ -506,7 +505,6 @@ header
   background-color: #1e1e1e;
   display: block;
   position: absolute;
-  width: 30px;
   height: 2px;
   left: 0;
   width: 75%;
@@ -1119,7 +1117,6 @@ Portfolio
   width: 20px;
   height: 20px;
   position: absolute;
-  background: rgb(255,77,30);
   content: '';
   left: 50%;
   bottom: -8px;

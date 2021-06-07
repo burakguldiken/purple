@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Core.Validations.FluentValidation
 {
-    public class ValidationTool
+    public static class ValidationTool
     {
         public static void Validate(IValidator validator, object entity)
         {
