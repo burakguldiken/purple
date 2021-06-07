@@ -1,3 +1,5 @@
+<br><br>
+
 # Purple
 
 Purple freelance veya tam zamanlı bir iş arama platformudur.Bu platformda ilan oluşturmak veya diğer kullanıcılar ile iletişime geçmek için PCoin'e ihtiyaç duyulur.
@@ -9,10 +11,9 @@ Purple freelance veya tam zamanlı bir iş arama platformudur.Bu platformda ilan
 <img title="" src="./images/homefive.png" alt="homefive.png" data-align="inline" width="400"> <img title="" src="./images/login.png" alt="login.png" width="400">
 <img title="" src="./images/register.png" alt="register.png" data-align="inline" width="400"> <img title="" src="./images/purpleone.png" alt="purpleone.png" width="400">
 <img title="" src="./images/purpletwo.png" alt="purpletwo.png" data-align="inline" width="400"> <img title="" src="./images/purplethree.png" alt="purplethree.png" width="400">
-<img title="" src="./images/newad.png" alt="newad.png" data-align="inline" width="400"> <img title="" src="./images/pay.png" alt="pay.png" width="400">
+<img title="" src="./images/adnew.png" alt="adnew.png" data-align="inline" width="400"> <img title="" src="./images/pay.png" alt="pay.png" width="400">
 <img title="" src="./images/profile.png" alt="profile.png" data-align="inline" width="400"><img title="" src="./images/addetail.png" alt="addetail.png" data-align="inline" width="400"> 
-<img title="" src="./images/message.png" alt="message.png" width="400"><img title="" src="./images/ad.png" alt="ad.png" width="400">
-<img title="" src="./images/adlist.png" alt="adlist.png" width="400"><img title="" src="./images/newad.png" alt="newad.png" width="400">
+<img title="" src="./images/message.png" alt="message.png" width="400"><img title="" src="./images/adlist.png" alt="adlist.png" width="400">
 
 <br>
 
@@ -39,7 +40,12 @@ Real-time mesaj sistemi,İş süreçlerinin yönetilmesi için Kanban Board ve C
 - RabbitMQ
   
 - MinIO
+
+- Html
+
+- Css
   
-- Jenkins
-  
-- Octopus
+- CI/CD süreçlerinin yöntimi Jenkins ve Octopus ile gerçekleştirildi.
+
+- Kod kalite kontrolü için Sonarqube tool'u kullanıldı.
+
