@@ -3,6 +3,12 @@ using Business.Constant.Messages;
 using Business.Enums;
 using Business.Interfaces;
 using Business.ValidationRules.User;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
+using Core.Aspects.Autofac.Transaction;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingCorners.Cache.Redis;
+using Core.CrossCuttingCorners.Caching.Microsoft;
 using Core.Enums;
 using Core.Results;
 using Core.Utilities.Security.Hashing;
@@ -21,11 +27,13 @@ namespace Business.Services
     public class AuthService : BaseService, IAuthService
     {
         private readonly ITokenHelper _tokenHelper;
+        private readonly IUserRepository _userRepository;
 
-        public AuthService(IUnitOfWork _unitOfWork, IMapper _mapper, ITokenHelper tokenHelper)
-            : base(_unitOfWork, _mapper)
+        public AuthService(IMapper _mapper, ITokenHelper tokenHelper,IUserRepository userRepository)
+            : base(_mapper)
         {
             _tokenHelper = tokenHelper;
+            _userRepository = userRepository;
         }
 
         /// <summary>
@@ -33,11 +41,12 @@ namespace Business.Services
         /// </summary>
         /// <param name="userForLoginDto"></param>
         /// <returns></returns>
+        //[PerformanceAspect(5)]
         public IDataResult<User> Login(UserLoginRequestDto userForLoginDto)
         {
             ValidationTool.Validate(new LoginValidation(), userForLoginDto);
 
-            var userToCheck = _unitOfWork.UserRepository.GetUserByEmail(userForLoginDto.Email);
+            var userToCheck = _userRepository.GetUserByEmail(userForLoginDto.Email);
 
             if (userToCheck == null)
             {
@@ -57,10 +66,10 @@ namespace Business.Services
         /// </summary>
         /// <param name="userForRegisterDto"></param>
         /// <returns></returns>
+        [ValidationAspect(typeof(RegisterValidation))]
+        [TransactionScopeAspect]
         public IDataResult<User> Register(UserRegisterRequestDto userForRegisterDto)
         {
-            ValidationTool.Validate(new RegisterValidation(), userForRegisterDto);
-
             byte[] passwordHash, passwordSalt;
 
             HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out passwordHash, out passwordSalt);
@@ -75,7 +84,7 @@ namespace Business.Services
                 StatusId = (int)EnumStatus.Active
             };
 
-            if (_unitOfWork.UserRepository.Insert(user) <= 0)
+            if (_userRepository.Insert(user) <= 0)
             {
                 return new ErrorDataResult<User>(ErrorMessages.RegisterError);
             }
@@ -107,7 +116,7 @@ namespace Business.Services
         /// <returns></returns>
         public IResult UserExists(string email)
         {
-            if (_unitOfWork.UserRepository.GetUserByEmail(email) != null)
+            if (_userRepository.GetUserByEmail(email) != null)
             {
                 return new ErrorResult(ErrorMessages.UserAlreadyExists);
             }
@@ -119,9 +128,11 @@ namespace Business.Services
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
+        [CacheAspect]
+        //[CacheRemoveAspect("IAuthService.GetUsers")]
         public IDataResult<List<UserListResponseDto>> GetUsers(long userId)
         {
-            var currentUser = _unitOfWork.UserRepository.GetById(userId);
+            var currentUser = _userRepository.GetById(userId);
 
             if (currentUser is null)
             {
@@ -133,7 +144,7 @@ namespace Business.Services
                 return new ErrorDataResult<List<UserListResponseDto>>(ErrorMessages.Unauthorized);
             }
 
-            var users = _mapper.Map<List<UserListResponseDto>>(_unitOfWork.UserRepository.GetAll());
+            var users = _mapper.Map<List<UserListResponseDto>>(_userRepository.GetAll());
 
             return new SuccessDataResult<List<UserListResponseDto>>(users);
         }

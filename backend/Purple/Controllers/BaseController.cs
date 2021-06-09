@@ -13,11 +13,8 @@ namespace Purple.Controllers
     [ApiController]
     public class BaseController : Controller
     {
-        public IUnitOfWork _unitOfWork;
-
-        public BaseController(IUnitOfWork unitOfWork)
+        public BaseController()
         {
-            _unitOfWork = unitOfWork;
         }
 
         [NonAction]

@@ -1,5 +1,6 @@
 ﻿using Business.Enums;
 using Core.Entities;
+using Core.Utilities.Connection;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using System;
@@ -16,26 +17,13 @@ namespace Core.Contexts.Dapper
 {
     public class DbContext<T> : IDbContext<T> where T : BaseEntity, new()
     {
-        readonly IDbTransaction _transaction;
-
-        protected IDbConnection _connection
-        {
-            get
-            {
-                return _transaction.Connection;
-            }
-        }
-
-        public DbContext(IDbTransaction transaction)
-        {
-            _transaction = transaction;
-        }
+        IDbConnection _conn = ConnectionHelper.MySqlConnection();
 
         public IEnumerable<T> GetAll()
         {
             try
             {
-                return _connection.GetAll<T>().Where(x => x.StatusId == (int)EnumStatus.Active).ToList();
+                return _conn.GetAll<T>().Where(x => x.StatusId == (int)EnumStatus.Active).ToList();
             }
             catch (Exception ex)
             {
@@ -48,7 +36,7 @@ namespace Core.Contexts.Dapper
         {
             try
             {
-                return _connection.Get<T>(id);
+                return _conn.Get<T>(id);
             }
             catch (Exception ex)
             {
@@ -61,7 +49,7 @@ namespace Core.Contexts.Dapper
         {
             try
             {
-                return _connection.Update(item, _transaction);
+                return _conn.Update(item);
             }
             catch (Exception ex)
             {
@@ -75,7 +63,7 @@ namespace Core.Contexts.Dapper
             try
             {
                 item.StatusId = (int)EnumStatus.Inactive;
-                return _connection.Update(item, _transaction);
+                return _conn.Update(item);
             }
             catch (Exception ex)
             {
@@ -89,7 +77,7 @@ namespace Core.Contexts.Dapper
         {
             try
             {
-                return _connection.Insert(item, _transaction);
+                return _conn.Insert(item);
             }
             catch (Exception ex)
             {
@@ -102,7 +90,7 @@ namespace Core.Contexts.Dapper
         {
             try
             {
-                return _connection.Query<T>(sql, CreateParams(GetMethodName(), args));
+                return _conn.Query<T>(sql, CreateParams(GetMethodName(), args));
             }
             catch (Exception ex)
             {
@@ -115,7 +103,7 @@ namespace Core.Contexts.Dapper
         {
             try
             {
-                return _connection.Query<T>(sql);
+                return _conn.Query<T>(sql);
             }
             catch (Exception ex)
             {
@@ -128,7 +116,7 @@ namespace Core.Contexts.Dapper
         {
             try
             {
-                return _connection.BulkInsert(items).Current.Any();
+                return _conn.BulkInsert(items).Current.Any();
             }
             catch (Exception ex)
             {
@@ -141,7 +129,7 @@ namespace Core.Contexts.Dapper
         {
             try
             {
-                _connection.BulkUpdate(items);
+                _conn.BulkUpdate(items);
                 return true;
             }
             catch (Exception ex)
@@ -155,7 +143,7 @@ namespace Core.Contexts.Dapper
         {
             try
             {
-                _connection.BulkDelete(items);
+                _conn.BulkDelete(items);
                 return true;
             }
             catch (Exception ex)

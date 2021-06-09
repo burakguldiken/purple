@@ -13,9 +13,9 @@ namespace Business.ValidationRules.User
         public RegisterValidation()
         {
             RuleFor(x => x.Email).EmailAddress().MaximumLength(100);
-            RuleFor(x => x.Password).NotNull();
-            RuleFor(x => x.FirstName).NotNull();
-            RuleFor(x => x.Surname).NotNull();
+            RuleFor(x => x.Password).NotNull().NotEmpty();
+            RuleFor(x => x.FirstName).NotNull().NotEmpty();
+            RuleFor(x => x.Surname).NotNull().NotEmpty();
         }
     }
 }

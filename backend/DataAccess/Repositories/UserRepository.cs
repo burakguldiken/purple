@@ -11,7 +11,7 @@ namespace DataAccess.Repositories
 {
     public class UserRepository : DbContext<User>, IUserRepository
     {
-        public UserRepository(IDbTransaction dbTransaction) : base(dbTransaction)
+        public UserRepository()
         {
         }
 

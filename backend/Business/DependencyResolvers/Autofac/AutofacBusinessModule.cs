@@ -1,10 +1,13 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Business.Interfaces;
 using Business.Services;
+using Castle.DynamicProxy;
 using Core.Contexts.Dapper;
 using Core.CrossCuttingCorners.Cache.Redis;
 using Core.CrossCuttingCorners.FileServer;
 using Core.CrossCuttingCorners.Queue.RabbitMq;
+using Core.Utilities.Interceptors;
 using Core.Utilities.Security.Jwt;
 using DataAccess;
 using DataAccess.IRepositories;
@@ -27,11 +30,13 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<UserRepository>().As<IUserRepository>();
             builder.RegisterType<UserService>().As<IUserService>();
 
-            builder.RegisterType<RedisService>().As<IRedisService>();
-            builder.RegisterType<RabbitMqService>().As<IRabbitMqService>();
-            builder.RegisterType<MinioService>().As<IMinioService>();
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+                {
+                    Selector = new AspectInterceptorSelector()
+                }).SingleInstance();
         }
     }
 }

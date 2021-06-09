@@ -22,8 +22,7 @@ namespace Purple.Controllers
     {
         private readonly IAuthService _authService;
 
-        public AuthController(IUnitOfWork _unitOfWork, IAuthService authService) 
-            : base(_unitOfWork)
+        public AuthController(IAuthService authService) 
         {
             _authService = authService;
         }
@@ -50,8 +49,6 @@ namespace Purple.Controllers
             {
                 return BadRequest(result.Message);
             }
-
-            _unitOfWork.Commit();
 
             return Ok(result.Data);
         }
@@ -80,8 +77,6 @@ namespace Purple.Controllers
             {
                 return BadRequest(result.Message);
             }
-
-            _unitOfWork.Commit();
 
             return Ok(result.Data);
         }
